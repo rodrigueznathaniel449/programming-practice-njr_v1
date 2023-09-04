@@ -37,7 +37,7 @@ function handleSymbol(symbol)
             runningTotal = 0;
             break;
         case '←':
-            if(buffer.length === 1)
+            if(buffer.length ===1)
             {
                 buffer = '0';
             }
@@ -52,8 +52,6 @@ function handleSymbol(symbol)
         case '÷':
             handleMath(symbol);
             break;
-
-        
     }
 }
 
@@ -96,7 +94,7 @@ function flushOperation(intBuffer)
     }
 }
 
-function handleNumber()
+function handleNumber(numberString)
 {
     if(buffer === "0")
     {
@@ -110,7 +108,8 @@ function handleNumber()
 
 function init()
 {
-    document.querySelector('.calc-buttons').addEventListener('click', function(event)
+    document.querySelector('.calc-buttons').
+    addEventListener('click', function(event)
         {
             buttonClick(event.target.innerText);
         })
