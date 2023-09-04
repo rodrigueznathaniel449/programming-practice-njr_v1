@@ -11,10 +11,29 @@ function buttonClick(value)
     {
         handleSymbol(value);
     }
-    else 
+    else
     {
         handleNumber(value);
     }
     screen.innerText = buffer;
+}
+
+function handleSymbol(symbol)
+{
+    switch(symbol)
+    {
+        case 'C':
+            buffer = '0';
+            runningTotal = 0;
+            break;
+        case '=':
+            if(previousOperator === null)
+            {
+                return
+            }
+            flushOperation(parseInt(buffer));
+            previousOperator = null;
+
+    }
 }
 
