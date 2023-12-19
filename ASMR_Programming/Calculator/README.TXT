@@ -1,4 +1,9 @@
 Programming Practice V1
+
+Anything that interests you, feel free to take and use and make your own, this repo is for skill development and practice projects
+
 Goal: 
-  -Complete various coding projects with C, JavaScript, Python, and perhaps PHP or Swift, maybe even some HTML again
-  -increase skill set with coding while completing Harvard CS50, AWS SAA-C03, and AWS-Dev
+  -Complete various coding projects to increase skillset
+  -Boost IT knowledge career-wise
+
+
