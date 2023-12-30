@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Car Search Tab Manager",
+    "description": "Car Search Tab Manager, supporting majority of used car sites, including CarFax, Cars&Bids, and KBB as well",
+    "version": "1.0",
+    "icons": {
+        "16": "images/car-16.png",
+        "32": "images/car-32.png",
+        "48": "images/car-48.png",
+        "128": "images/car-128.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "host_permissions": [
+        "https://www.autotempest.com/*",
+        "https://www.carvana.com/*",
+        "https://www.cars.com/*",
+        "https://www.carfax.com/*",
+        "https://www.truecar.com/*",
+        "https://www.edmunds.com/*",
+        "https://www.kbb.com/*",
+        "https://www.autotrader.com/*",
+        "https://www.carmax.com/*",
+        "https://www.cargurus.com/*",
+        "https://www.carsdirect.com/*",
+        "https://carsandbids.com/*"
+    ],
+    "permissions": [
+        "tabGroups"
+    ]
+}
