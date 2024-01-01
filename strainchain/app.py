@@ -19,7 +19,7 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
-@app.route("/",  methods=["GET", "POST"])
+@app.route("/")
 def index():
     """Show the Home Page"""
     return render_template("index.html")
@@ -56,12 +56,12 @@ def myaccount():
     return render_template("myaccount.html")
 
 @app.route("/login",  methods=["GET", "POST"])
-def index():
+def login():
     """Show the Login Page"""
     return render_template("index.html")
 
 @app.route("/register",  methods=["GET", "POST"])
-def index():
+def register():
     """Show the Registration Page"""
     return render_template("register.html")
 
