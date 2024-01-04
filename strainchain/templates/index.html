@@ -5,46 +5,53 @@
 {% endblock %}
 
 {% block main %}
-    <div style="text-align: center;">
-        <h2 style="font-style: bold;">Welcome</h2>
-        <h5 style="font-style: bold;">"Empowering your Cannabis Journey with Personalized Insights and Real-Time Information"</h5>
-        <h5>Discover a world where personalized cannabis recommendations meet cutting-edge technology.</h5>
-        <h5>StrainChain is designed to enchance your cannabis experience; whether you are a Consumer, Grower, or Dispensary Owner</h5>
-        <input type="text" autofocus placeholder="Email Address" id="email-address">
-        <button type="submit" id="home-submit">Get Notified</button>
+    <div class="welcome">
+        <div style="text-align: center;">
+            <h2 style="font-style: bold;">Welcome</h2>
+            <h5 style="font-style: bold;">"Empowering your Cannabis Journey with Personalized<br>
+                Insights and Real-Time Information"</h5>
+            <p>Discover a world where personalized cannabis recommendations<br> 
+                meet cutting-edge technology. StrainChain is designed to enchance <br>
+                your cannabis experience; whether you are a Consumer, Grower, or Dispensary Owner</p>
+            <input type="text" autofocus placeholder="Email Address" id="email-address">
+            <button type="submit" id="home-submit">Get Notified</button>
+        </div>
+        <div>
+            <div>
+                <img src="/static/images/sc-home-ai-circle.png" alt="AI BudTender" width="155" height="115">
+                <h5>AI Budtender</h5>
+                <p>Personalized Strain Recommendations<br>
+                    Discover Strains tailored to your unique preferences and needs</p>
+            </div>
+            <div>
+                <img src="/static/images/sc-home-nw-circle.png" alt="Network" width="155" height="115">
+                <h5>Strain Networks</h5>
+                <p>Explore Elite Strain Insights<br>
+                    Dive into a rich database for advanced strain research and knowledge</p>
+            </div>
+            <div>
+                <img src="/static/images/sc-home-rt-circle.png" alt="Real Time" width="155" height="115">
+                <h5>Real-Time Availability</h5>
+                <p>Instant Availability Intelligence<br>
+                    Leverage live updates to track strain stock in real-time</p>
+            </div>
+            <div>
+                <img src="/static/images/sc-home-collab-circle.png" alt="Collaboration" width="155" height="115">
+                <h5>Strain Collaborator</h5>
+                <p>Innovative Strain Co-Creation<br>
+                    Collaborate with Experts to develop cutting-edge cannabis strains</p>
+            </div>
+        </div>
     </div>
-    <div>
+    <div class="partners">
         <div>
-            <h5>AI Budtender</h5>
-            <p>Personalized Strain Recommendation</p>
-            <p>Discover Strains tailored to your unique preferences and needs</p>
-            <img src="/static/images/sc-home-ai-circle.png" alt="AI BudTender" width="155" height="115">
+            <h2>Our Partners</h2>
         </div>
         <div>
-            <h5>Strain Networks</h5>
-            <p>Explore Elite Strain Insights</p>
-            <p>Dive into a rich database for advanced strain research and knowledge</p>
-            <img src="/static/images/sc-home-nw-circle.png" alt="Network" width="155" height="115">
-        </div>
-        <div>
-            <h5>Real-Time Availability</h5>
-            <p>Instant Availability Intelligence</p>
-            <p>Leverage live updates to track strain stock in real-time</p>
-            <img src="/static/images/sc-home-rt-circle.png" alt="Real Time" width="155" height="115">
-        </div>
-        <div>
-            <h5>Strain Collaborator</h5>
-            <p>Innovative Strain Co-Creation</p>
-            <p>Collaborate with Experts to develop cutting-edge cannabis strains</p>
-            <img src="/static/images/sc-home-collab-circle.png" alt="Collaboration" width="155" height="115">
+            <!--IMG PLACEHOLDER-->
         </div>
     </div>
-    <div>
-        <h2>Our Partners</h2>
-    </div>
-    <div></div><div></div>
-    <!--IMG PLACEHOLDER-->
-    <div>
+    <div class="features">
         <div style="text-align: center;">
             <h2>Features</h2>
         </div>
@@ -101,7 +108,7 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="getstarted">
         <h2>Get Started!</h2>
         <h3>
             Begin your journey with StrainChain today. Join out community of professionals, advocates, medical users, and enthusiasts working
