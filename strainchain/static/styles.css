@@ -1,3 +1,7 @@
+* {
+    margin: auto;
+    padding: auto;
+}
 .welcome {
     background-image: url("/static/images/welcome-background.png");
     background-attachment: fixed;
@@ -6,4 +10,7 @@
 }
 .welcomefeatures {
     color: #e5f4f2;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
 }

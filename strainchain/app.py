@@ -7,8 +7,6 @@ from helpers import login_required
 
 app = Flask(__name__)
 
-#Might need to set session for FileSystem over signed cookies, need to research, could be only for dev env/testing
-
 #Need to create and link DB here
 
 @app.after_request
