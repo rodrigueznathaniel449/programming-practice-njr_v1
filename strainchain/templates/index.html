@@ -125,14 +125,23 @@
         <a class="nav-link" href="/register"><button>Sign Up</button></a>
     </div>
     <div class="footer">
-        <h4 style="text-align: center;">Product - Resources - Company</h4>
-        <p style="text-align: center;">Features  Blog  About</p>
-        <p style="text-align: center;">Pricing  Education  Join Us</p>
-        <p style="text-align: center;">Join Us</p>
-        <h4 style="text-align: right;">Subscribe to our newsletter</h4>
-        <p style="text-align: right;">For product announcements and exclusive insights</p>
-        <input type="text" placeholder="Input your Email" id="newsletter">
-        <button type="submit" id="newsletter-sub">Subscribe</button>
+        <div class="footer-items">
+            <div class="footer-logo">
+                <img src="/static/images/sc-home-logo-footer.png" alt="footer-logo" id="footer-logo" width="200" height="200">
+            </div>
+            <div class="footer-bulk">   
+                <h4 style="text-align: center;">Product - Resources - Company</h4>
+                <p style="text-align: center;">Features  Blog  About</p>
+                <p style="text-align: center;">Pricing  Education  Join Us</p>
+                <p style="text-align: center;">Join Us</p>
+            </div>
+            <div class="footer-newsletter">
+                <h4 style="text-align: right;">Subscribe to our newsletter</h4>
+                <p style="text-align: right;">For product announcements and exclusive insights</p>
+                <input type="text" placeholder="Input your Email" id="newsletter">
+                <button type="submit" id="newsletter-sub">Subscribe</button>
+            </div>
+        </div>
         <div class="footer-text">2024 StrainChain Inc. - Privacy - Terms - Sitemap</div>
     </div>
 {% endblock %}
