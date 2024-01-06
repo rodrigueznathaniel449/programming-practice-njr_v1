@@ -1,29 +1,21 @@
 #email-address {
     border: none;
     border-radius: 10px;
-}
-.featuretitle1 {
-    color: #e5f4f2;
-}
-.featuretitle2 {
-    color: #31c845;
-    margin-bottom: 0%;
-    padding-bottom: 0%;
-}
-.featuretext {
-    color: #e5f4f2;
-    margin-left: 15px;
-    margin-right: 15px;
+    padding: 5px;
 }
 .home-feature1, .home-feature2, .home-feature3, .home-feature4 {
     display: flex;
     flex-direction: row;
+    margin: auto;
+    padding: auto;
+    color: #001722;
 }
 #home-submit {
     border: none;
     border-radius: 10px;
     background-color: #31c845;
     color: #e5f4f2;
+    padding: 5px;
 }
 .welcome {
     background-image: url("/static/images/welcome-background.png");
@@ -32,9 +24,19 @@
     background-color: #001722;
 }
 .welcomefeatures {
-    color: #e5f4f2;
     display: flex;
     flex-direction: row;
-    margin: auto;
+}
+.welcomefeaturetitle1 {
+    color: #e5f4f2;
+}
+.welcomefeaturetitle2 {
+    color: #31c845;
+    margin-bottom: 0%;
+}
+.welcomefeaturetext {
+    color: #e5f4f2;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
