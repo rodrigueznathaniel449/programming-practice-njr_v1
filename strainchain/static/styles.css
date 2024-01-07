@@ -15,6 +15,15 @@
     display: flex;
     flex-direction: row;
 }
+.footer-logo {
+    float: left;
+}
+.footer-bulk {
+    text-align: center;
+}
+.footer-newsletter {
+    text-align: end;
+}
 .home-feature1, .home-feature2, .home-feature3, .home-feature4 {
     display: flex;
     flex-direction: row;
