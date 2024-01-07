@@ -22,7 +22,6 @@
 .getstarted {
     display: flex;
     flex-direction: row;
-    width: 100vw;
     float: none;
     padding-left: auto;
     padding-right: auto;
@@ -63,9 +62,6 @@
 }
 .home-title {
     font-style: bold;
-}
-.img-row {
-    width: 100vw;
 }
 .welcome {
     background-image: url("/static/images/welcome-background.png");
