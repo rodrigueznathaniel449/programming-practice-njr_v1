@@ -10,6 +10,8 @@
 .footer {
     background-color: #001722;
     color: #e5f4f2;
+    margin: auto;
+    padding: auto;
 }
 .footer-items {
     display: flex;
@@ -17,12 +19,6 @@
 }
 .footer-logo {
     float: left;
-}
-.footer-bulk {
-    text-align: center;
-}
-.footer-newsletter {
-    text-align: end;
 }
 .home-feature1, .home-feature2, .home-feature3, .home-feature4 {
     display: flex;
@@ -37,6 +33,10 @@
     background-color: #31c845;
     color: #e5f4f2;
     padding: 5px;
+}
+.partnerimgs {
+    color: #001722;
+    width: 100vw;
 }
 .welcome {
     background-image: url("/static/images/welcome-background.png");
