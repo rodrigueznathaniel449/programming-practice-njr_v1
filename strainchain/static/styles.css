@@ -22,7 +22,29 @@
 }
 .footer-logo {
     float: left;
-    margin: auto;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: auto;
+    margin-bottom: 0px;
+    padding: auto;
+}
+.footer-list {
+    list-style: none;
+}
+.footer-lists {
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: auto;
+}
+.footer-newsletter {
+    margin-left: 30px;
+    margin-right: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
     padding: auto;
 }
 .getstarted {
