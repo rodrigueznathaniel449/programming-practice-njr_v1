@@ -10,8 +10,7 @@
 .footer {
     background-color: #001722;
     color: #e5f4f2;
-    margin: auto;
-    padding: auto;
+    float: none;
 }
 .footer-items {
     display: flex;
@@ -24,6 +23,9 @@
     display: flex;
     flex-direction: row;
     width: 100vw;
+    float: none;
+    padding-left: auto;
+    padding-right: auto;
 }
 #getstartedbutton {
     border: none;
@@ -40,8 +42,8 @@
     color: #31c845;
     width: 50vw;
     border: none;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
     margin-right: 0;
     padding-right: 0;
 }
@@ -70,6 +72,8 @@
     background-attachment: fixed;
     background-size: 100vw 100vh;
     background-color: #001722;
+    padding: auto;
+    margin: auto;
 }
 .welcomefeatures {
     display: flex;
