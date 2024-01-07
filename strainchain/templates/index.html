@@ -7,14 +7,14 @@
 {% block main %}
     <div class="welcome">
         <div style="text-align: center;">
-            <h2 style="font-style: bold;">Welcome</h2>
+            <h2 style="font-style: bold;" class="home-title">Welcome</h2>
             <h5 style="font-style: bold;">"Empowering your Cannabis Journey with Personalized<br>
                 Insights and Real-Time Information"</h5>
             <p>Discover a world where personalized cannabis recommendations<br> 
                 meet cutting-edge technology. StrainChain is designed to enchance <br>
                 your cannabis experience; whether you are a Consumer, Grower, or Dispensary Owner</p>
             <input type="text" autofocus placeholder="Email Address" id="email-address">
-            <button type="submit" id="home-submit">Get Notified</button>
+            <button type="submit" class="home-submit">Get Notified</button>
         </div>
         <div class="welcomefeatures">
             <div>
@@ -52,25 +52,29 @@
         </div>
     </div>
     <div class="partners">
-        <div>
+        <div class="home-title">
             <h2>Our Partners</h2>
         </div>
         <div class="partnerimgs">
-            <img src="/static/images/alphaplant.png" alt="AlphaPlant">
-            <img src="/static/images/avalabs.png" alt="Ava_Labs">
-            <img src="/static/images/awspartner.png" alt="Aws_Partner">
-            <img src="/static/images/blockticity.png" alt="Blockticity">
-            <img src="/static/images/boheco.png" alt="Boheco"><br>
-            <img src="/static/images/hdr.png" alt="HDR">
-            <img src="/static/images/interviewmachine.png" alt="Interview_Machine">
-            <img src="/static/images/kalmansforge.png" alt="Kalmans_Forge">
-            <img src="/static/images/meinchain.png" alt="MeinChain">
-            <img src="/static/images/sideproject.png" alt="SideProject">
-            <img src="/static/images/soonami.png" alt="Soonami">
+            <div class="img-row">
+                <img src="/static/images/alphaplant.png" alt="AlphaPlant">
+                <img src="/static/images/avalabs.png" alt="Ava_Labs">
+                <img src="/static/images/awspartner.png" alt="Aws_Partner">
+                <img src="/static/images/blockticity.png" alt="Blockticity">
+                <img src="/static/images/boheco.png" alt="Boheco">
+            </div>
+            <div class="img-row">
+                <img src="/static/images/hdr.png" alt="HDR">
+                <img src="/static/images/interviewmachine.png" alt="Interview_Machine">
+                <img src="/static/images/kalmansforge.png" alt="Kalmans_Forge">
+                <img src="/static/images/meinchain.png" alt="MeinChain">
+                <img src="/static/images/sideproject.png" alt="SideProject">
+                <img src="/static/images/soonami.png" alt="Soonami">
+            </div>
         </div>
     </div>
     <div class="features">
-        <div style="text-align: center;">
+        <div style="text-align: center;" class="home-title">
             <h2>Features</h2>
         </div>
         <div class="home-feature1">
@@ -127,12 +131,15 @@
         </div>
     </div>
     <div class="getstarted">
-        <h2>Get Started!</h2>
-        <h3>
-            Begin your journey with StrainChain today. Join out community of professionals, advocates, medical users, and enthusiasts working
-             towards a smarter, more transparent cannabis future. Sign up now to start exploring the possibilities.
-        </h3>
-        <a class="nav-link" href="/register"><button>Sign Up</button></a>
+        <div id="getstartedtext">
+            <h2 id="getstartedtitle">Get Started!</h2>
+            <h4 class="card-text">Begin your journey with StrainChain today. Join out community of professionals, advocates, medical users, and enthusiasts working
+                towards a smarter, more transparent cannabis future. Sign up now to start exploring the possibilities.</h4>
+            <a class="nav-link" href="/register"><button id="getstartedbutton">Sign Up</button></a>
+        </div>
+        <div>
+            <img src="/static/images/getstarted.png" class="img-fluid rounded-start" alt="Get Started">
+        </div>
     </div>
     <div class="footer">
         <div class="footer-items">
@@ -149,7 +156,7 @@
                 <h4 style="text-align: right;">Subscribe to our newsletter</h4>
                 <p style="text-align: right;">For product announcements and exclusive insights</p>
                 <input type="text" placeholder="Input your Email" id="newsletter">
-                <button type="submit" id="newsletter-sub">Subscribe</button>
+                <button type="submit" class="home-submit">Subscribe</button>
             </div>
         </div>
         <div class="footer-text">2024 StrainChain Inc. - Privacy - Terms - Sitemap</div>
