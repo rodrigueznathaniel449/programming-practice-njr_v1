@@ -1,6 +1,16 @@
+/* ===== HTML Items CSS ===== */
 body {
     background-color: #e5f4f2;
     color: #001722;
+}
+ul {
+    list-style: none;
+    list-style-type: none;
+}
+/* ===== HomePage-Index CSS ===== */
+.container-fluid {
+    padding-left: 0%;
+    padding-right: 0%;
 }
 #email-address, #newsletter {
     border: none;
@@ -85,9 +95,9 @@ body {
 .home-title {
     font-style: bold;
 }
-ul {
-    list-style: none;
-    list-style-type: none;
+.navbar {
+    padding-left: 5px;
+    padding-right: 5px;
 }
 .welcome {
     background-image: url("/static/images/welcome-background.png");
@@ -113,4 +123,25 @@ ul {
     margin-left: 15px;
     margin-right: 15px;
 }
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #31c845 #e5f4f2;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #e5f4f2;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #31c845;
+    border-radius: 10px;
+    border: 3px solid #e5f4f2;
+  }
 
