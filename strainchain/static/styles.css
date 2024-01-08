@@ -1,4 +1,4 @@
-.body {
+body {
     background-color: #e5f4f2;
     color: #001722;
 }
@@ -22,27 +22,21 @@
 }
 .footer-logo {
     float: left;
-    margin-left: 30px;
+    margin-left: 10px;
     margin-right: 30px;
     margin-top: auto;
     margin-bottom: 0px;
     padding: auto;
 }
 .footer-list {
-    list-style: none;
-}
-.footer-lists {
     display: flex;
     flex-direction: row;
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin: auto;
     padding: auto;
 }
 .footer-newsletter {
     margin-left: 30px;
-    margin-right: 0px;
+    margin-right: 10px;
     margin-top: auto;
     margin-bottom: auto;
     padding: auto;
@@ -90,6 +84,10 @@
 }
 .home-title {
     font-style: bold;
+}
+ul {
+    list-style: none;
+    list-style-type: none;
 }
 .welcome {
     background-image: url("/static/images/welcome-background.png");
