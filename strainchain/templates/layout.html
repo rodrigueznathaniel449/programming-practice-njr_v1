@@ -23,6 +23,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbar">
                 {% if session["user_id"] %}
+                <!--If User is logged in-->
                 <ul class="navbar-nav me-auto mt-2">
                     <li class="nav-item"><a class="nav-link" href="/" style="color: #e5f4f2;">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/about" style="color: #e5f4f2;">About Us</a></li>
@@ -36,6 +37,7 @@
                     <li class="nav-item"><a class="nav-link" href="/logout" style="color: #31c845;">Log Out</a></li>
                 </ul>
                 {% else %}
+                <!--Browsing User (Not Logged In)-->
                 <ul class="navbar-nav me-auto mt-2">
                     <li class="nav-item"><a class="nav-link" href="/" style="color: #e5f4f2;">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/about" style="color: #e5f4f2;">About Us</a></li>
