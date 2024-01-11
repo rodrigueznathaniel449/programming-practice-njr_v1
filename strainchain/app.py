@@ -32,10 +32,10 @@ def learn():
     """Show the Learn Page"""
     return render_template("learn.html")
 
-@app.route("/budtender",  methods=["GET", "POST"])
-def budtender():
+@app.route("/pharmacist-learn",  methods=["GET", "POST"])
+def pharmacistlearn():
     """Show the BudTender Page"""
-    return render_template("budtender.html")
+    return render_template("pharmacist-learn.html")
 
 @app.route("/library",  methods=["GET", "POST"])
 def library():
