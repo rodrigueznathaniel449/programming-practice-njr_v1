@@ -40,12 +40,12 @@ def pharmacist():
 @app.route("/library-learn",  methods=["GET", "POST"])
 def library():
     """Show the Library Page"""
-    return render_template("library.html")
+    return render_template("library-learn.html")
 
 @app.route("/rts-learn",  methods=["GET", "POST"])
 def rts():
     """Show the Real-Time Strategy Page"""
-    return render_template("rts.html")
+    return render_template("rts-learn.html")
 
 @app.route("/myaccount",  methods=["GET", "POST"])
 @login_required
