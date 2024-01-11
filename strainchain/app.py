@@ -33,16 +33,16 @@ def learn():
     return render_template("learn.html")
 
 @app.route("/pharmacist-learn",  methods=["GET", "POST"])
-def pharmacistlearn():
+def pharmacist():
     """Show the BudTender Page"""
     return render_template("pharmacist-learn.html")
 
-@app.route("/library",  methods=["GET", "POST"])
+@app.route("/library-learn",  methods=["GET", "POST"])
 def library():
     """Show the Library Page"""
     return render_template("library.html")
 
-@app.route("/rts",  methods=["GET", "POST"])
+@app.route("/rts-learn",  methods=["GET", "POST"])
 def rts():
     """Show the Real-Time Strategy Page"""
     return render_template("rts.html")
