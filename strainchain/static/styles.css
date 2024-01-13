@@ -1,4 +1,5 @@
 /* ===== HTML Items CSS ===== */
+html { scroll-behavior: smooth; }
 body {
     background-color: #e5f4f2;
     color: #001722;
@@ -145,6 +146,7 @@ ul {
 .home-title {
     font-style: bold;
     padding-top: 1%;
+    padding-bottom: 1%;
 }
 .partnerimgs img {
     margin-left: 15px;
