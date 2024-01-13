@@ -42,6 +42,16 @@ def library():
     """Show the Library Page"""
     return render_template("library-learn.html")
 
+@app.route("/collaboration-learn",  methods=["GET", "POST"])
+def collab():
+    """Show the Real-Time Strategy Page"""
+    return render_template("collaboration-learn.html")
+
+@app.route("/networks-learn",  methods=["GET", "POST"])
+def networks():
+    """Show the Real-Time Strategy Page"""
+    return render_template("networks-learn.html")
+
 @app.route("/rts-learn",  methods=["GET", "POST"])
 def rts():
     """Show the Real-Time Strategy Page"""
