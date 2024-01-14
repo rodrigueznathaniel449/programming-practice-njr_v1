@@ -1,14 +1,23 @@
 /* ===== HTML Items CSS ===== */
-html { scroll-behavior: smooth; }
+html { 
+    scroll-behavior: smooth;
+    height: 100vh;
+}
 body {
     background-color: #e5f4f2;
     color: #001722;
     font-family: "HammerSmith One";
+    min-height: 100vh;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 a {
     color: inherit;
     text-decoration: none;
+}
+main {
+    flex: 1;
 }
 ul {
     list-style: none;
@@ -61,7 +70,6 @@ ul {
 .container-fluid {
     padding-left: 0%;
     padding-right: 0%;
-    min-height: 100%;
 }
 .divider {
     border-radius: 10px;
@@ -139,6 +147,7 @@ ul {
     background-color: #001722;
     color: #e5f4f2;
     float: none;
+    overflow: auto;
 }
 .footer-items {
     display: flex;
@@ -236,11 +245,12 @@ ul {
 .majority-footer {
     background-color: #001722;
     color: #e5f4f2;
-    float: none;
     position: relative;
     bottom: 0;
     right: 0;
     left: 0;
+    flex-shrink: 0;
+    overflow: auto;
 }
 #majority-footer-logo {
     float: left;
@@ -274,6 +284,7 @@ ul {
     background-color: #001722;
     padding: auto;
     margin: auto;
+    overflow: auto;
 }
 .welcome input {
     width: 30%;
