@@ -24,6 +24,15 @@ ul {
     padding-left: 10%;
     padding-right: 10%;
 }
+.audiences {
+    border: 1px #001722;
+    border-radius: 5px;
+    background-color: #001722;
+    color: #e5f4f2;
+    padding: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
 .audience-market {
     display: flex;
     flex-direction: row;
@@ -33,6 +42,12 @@ ul {
 .container-fluid {
     padding-left: 0%;
     padding-right: 0%;
+}
+.divider {
+    border-radius: 10px;
+    border: 4px solid #31c845;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 #email-address, #newsletter {
     border: none;
