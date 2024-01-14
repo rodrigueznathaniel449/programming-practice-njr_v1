@@ -32,7 +32,7 @@ ul {
     padding-right: 20%;
     padding-bottom: 2%;
 }
-.about-title {
+#about-title {
     font-style: bold;
     padding-top: 1%;
     padding-left: 10%;
@@ -226,6 +226,13 @@ ul {
     margin-top: 1%;
     margin-bottom: 1%;
 }
+#learn-title {
+    padding-top: 1%;
+}
+.learn-text {
+    padding-left: 10%;
+    padding-right: 10%;
+}
 .majority-footer {
     background-color: #001722;
     color: #e5f4f2;
@@ -249,6 +256,9 @@ ul {
     padding-right: 5%;
     padding-top: 1%;
     padding-bottom: 1%;
+}
+.tech-offer {
+    padding: 1%;
 }
 .welcome {
     background-image: url("/static/images/welcome-background.png");
