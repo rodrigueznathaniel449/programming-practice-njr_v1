@@ -14,13 +14,21 @@ ul {
     list-style-type: none;
 }
 /* ===== HomePage-Index CSS ===== */
-.about-para {
-    padding-left: 20%;
-    padding-right: 20%;
+#about-para1 {
+    padding-left: 10%;
+    padding-right: 2.5%;
+}
+#about-para2 {
+    padding-left: 2.5%;
+    padding-right: 10%;
 }
 .about {
     display: flex;
     flex-direction: row;
+}
+#about-end {
+    padding-left: 20%;
+    padding-right: 20%;
 }
 .about-title {
     font-style: bold;
@@ -115,10 +123,16 @@ ul {
     margin-right: auto;
     margin-bottom: auto;
 }
+#footer-text {
+    text-align: center;
+    padding-left: 50%;
+}
 .footer {
     background-color: #001722;
     color: #e5f4f2;
     float: none;
+    position: fixed;
+    bottom: 0;
 }
 .footer-items {
     display: flex;
