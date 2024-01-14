@@ -49,7 +49,7 @@ ul {
 }
 .audiences {
     border: 1px #001722;
-    border-radius: 5%;
+    border-radius: 10%;
     background-color: #001722;
     color: #e5f4f2;
     padding: 1%;
@@ -58,6 +58,13 @@ ul {
 }
 .audiences h4 {
     color: #31c845;
+    padding-top: 1%;
+}
+#audience-center-vert {
+    padding-top: 5%;
+}
+#audience-title-center-vert {
+    padding-top: 2%;
 }
 .audience-market {
     display: flex;
@@ -241,6 +248,10 @@ ul {
 .learn-text {
     padding-left: 10%;
     padding-right: 10%;
+}
+#library-learn-title {
+    padding-top: 1%;
+    font-style: bold;
 }
 .majority-footer {
     background-color: #001722;
