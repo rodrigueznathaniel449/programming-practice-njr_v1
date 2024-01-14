@@ -131,8 +131,6 @@ ul {
     background-color: #001722;
     color: #e5f4f2;
     float: none;
-    position: fixed;
-    bottom: 0;
 }
 .footer-items {
     display: flex;
