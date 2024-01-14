@@ -14,9 +14,13 @@ ul {
     list-style-type: none;
 }
 /* ===== HomePage-Index CSS ===== */
-.about-initpara {
+.about-para {
     padding-left: 20%;
     padding-right: 20%;
+}
+.about {
+    display: flex;
+    flex-direction: row;
 }
 .about-title {
     font-style: bold;
@@ -26,18 +30,23 @@ ul {
 }
 .audiences {
     border: 1px #001722;
-    border-radius: 5px;
+    border-radius: 5%;
     background-color: #001722;
     color: #e5f4f2;
     padding: 1%;
     margin-left: 1%;
     margin-right: 1%;
 }
+.audiences h4 {
+    color: #31c845;
+}
 .audience-market {
     display: flex;
     flex-direction: row;
     padding-left: 5%;
     padding-right: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 .container-fluid {
     padding-left: 0%;
