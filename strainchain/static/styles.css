@@ -242,6 +242,10 @@ ul {
     right: 0;
     left: 0;
 }
+#majority-footer-logo {
+    float: left;
+    
+}
 .navbar {
     padding-left: 5px;
     padding-right: 5px;
@@ -257,8 +261,11 @@ ul {
     padding-top: 1%;
     padding-bottom: 1%;
 }
-.tech-offer {
-    padding: 1%;
+.tech-offer1 {
+    padding-right: 2%;
+}
+.tech-offer2 {
+    padding-left: 2%;
 }
 .welcome {
     background-image: url("/static/images/welcome-background.png");
