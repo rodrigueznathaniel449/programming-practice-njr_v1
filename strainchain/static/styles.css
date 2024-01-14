@@ -218,6 +218,15 @@ ul {
     margin-top: 1%;
     margin-bottom: 1%;
 }
+.majority-footer {
+    background-color: #001722;
+    color: #e5f4f2;
+    float: none;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
 .navbar {
     padding-left: 5px;
     padding-right: 5px;
