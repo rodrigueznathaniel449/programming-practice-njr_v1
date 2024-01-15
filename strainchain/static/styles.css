@@ -165,7 +165,7 @@ main {
 }
 .footer-list {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 1%;
     margin-left: auto;
     margin-right: auto;
