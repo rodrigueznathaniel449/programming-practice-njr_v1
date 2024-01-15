@@ -7,7 +7,6 @@ body {
     background-color: #e5f4f2;
     color: #001722;
     font-family: "HammerSmith One";
-    min-height: 100vh;
     height: 100%;
     display: flex;
     flex-direction: column;
