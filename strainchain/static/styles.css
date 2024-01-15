@@ -279,7 +279,16 @@ ul {
     flex-direction: row;
 }
 .tech-integration-right {
-    
+    margin-right: 10%;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 0%;
+}
+.tech-integration-left {
+    padding-right: 1%;
+    padding-left: 10%;
+    padding-top: 7%;
+    padding-bottom: 6%;
 }
 .tech-offerings {
     display: flex;
