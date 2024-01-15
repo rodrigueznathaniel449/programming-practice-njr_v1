@@ -19,10 +19,6 @@ a {
 main {
     flex: 1;
 }
-ul {
-    list-style: none;
-    list-style-type: none;
-}
 /* ===== HomePage-Index CSS ===== */
 #about-para1 {
     padding-left: 10%;
