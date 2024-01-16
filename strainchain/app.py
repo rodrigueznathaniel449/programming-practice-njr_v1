@@ -29,12 +29,12 @@ def about():
 
 @app.route("/learn",  methods=["GET", "POST"])
 def learn():
-    """Show the Learn Page"""
+    """Show the Learn More Page"""
     return render_template("learn.html")
 
 @app.route("/pharmacist-learn",  methods=["GET", "POST"])
 def pharmacist():
-    """Show the BudTender Page"""
+    """Show the Pharmacist Page"""
     return render_template("pharmacist-learn.html")
 
 @app.route("/library-learn",  methods=["GET", "POST"])
@@ -44,13 +44,18 @@ def library():
 
 @app.route("/collaboration-learn",  methods=["GET", "POST"])
 def collab():
-    """Show the Real-Time Strategy Page"""
+    """Show the Collaboration Learn Page"""
     return render_template("collaboration-learn.html")
 
 @app.route("/networks-learn",  methods=["GET", "POST"])
 def networks():
-    """Show the Real-Time Strategy Page"""
+    """Show the Networks Learn Page"""
     return render_template("networks-learn.html")
+
+@app.route("/networks-build",  methods=["GET", "POST"])
+def networks():
+    """Show the Networks Learn Page"""
+    return render_template("networks-build.html")
 
 @app.route("/rts-learn",  methods=["GET", "POST"])
 def rts():
