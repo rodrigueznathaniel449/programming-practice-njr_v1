@@ -297,16 +297,16 @@ main {
 .tech-offerings {
     display: flex;
     flex-direction: row;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
     padding-top: 1%;
     padding-bottom: 1%;
 }
 .tech-offer1 {
-    padding-right: 2%;
+    padding-right: 4%;
 }
 .tech-offer2 {
-    padding-left: 2%;
+    padding-left: 4%;
 }
 .welcome {
     background-image: url("/static/images/welcome-background.png");
