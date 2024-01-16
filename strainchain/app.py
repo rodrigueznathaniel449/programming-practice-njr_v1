@@ -53,7 +53,7 @@ def networks():
     return render_template("networks-learn.html")
 
 @app.route("/networks-build",  methods=["GET", "POST"])
-def networks():
+def networksbuild():
     """Show the Networks Learn Page"""
     return render_template("networks-build.html")
 
