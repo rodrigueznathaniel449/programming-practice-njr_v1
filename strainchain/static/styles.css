@@ -218,6 +218,17 @@ main {
     padding-right: 1%;
     padding-left: 1%;
 }
+.growerfeatureset {
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+}
+.growerfeatures {
+    padding: 1%;
+}
+.form-control {
+    width: 30%;
+}
 .home-submit {
     border: none;
     border-radius: 10px;
@@ -277,10 +288,6 @@ main {
 }
 .navbar-brand {
     padding-left: 1%;
-}
-#network-search {
-    padding-left: 30%;
-    padding-right: 30%;
 }
 .tech-integration {
     display: flex;
