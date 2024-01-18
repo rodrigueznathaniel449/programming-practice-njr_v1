@@ -18,7 +18,7 @@ a {
 main {
     flex: 1;
 }
-/* ===== HomePage-Index CSS ===== */
+/* ===== HTML Pages CSS ===== */
 #about-para1 {
     padding-left: 10%;
     padding-right: 2.5%;
@@ -277,6 +277,10 @@ main {
 }
 .navbar-brand {
     padding-left: 1%;
+}
+#network-search {
+    padding-left: 30%;
+    padding-right: 30%;
 }
 .tech-integration {
     display: flex;
