@@ -13,7 +13,7 @@
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Search Across Networks" aria-label="network-search">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="submit">&#x1F50E;&#xFE0E;</button>
+                    <button class="btn btn-outline-secondary" type="submit" style="background-color: #31c845;">&#x1F50E;&#xFE0E;</button>
                 </div>
             </div>
         </div>
@@ -25,17 +25,29 @@
             </label>
         </div>
         <div class="growerfeatures">
-            <h4>Show Archived Networks</h4>
-        </div>
-        <div class="growerfeatures">
-            <button class="learn-more-button">Create Strain Network</button>
+            <p>Show Archived Networks</p>
         </div>
     </div>
-    <form>
-
-    </form>
-    <form>
-            
+    <form action="/networks-build" method="post">
+        <div>
+            <h4>Create New Strain Network</h4>
+            <label for="networkname">Network Name</label><br>
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="networkname" name="networkname" placeholder="Enter Item Name" type="text"><br>
+            <label for="AccessModelSelect">Access Model</label>
+            <div name="AccessModelSelect">
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline1">Non-Participating Model</label>
+                </div>
+                <div class="custom-control custom-radio custom-control-inline">
+                    <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadioInline2">Participating Model</label>
+                </div>
+            </div>
+            <label for="network-description">Description</label><br>
+            <textarea class="form-control" aria-label="network-description" name="network-description" placeholder="Enter Item Description" style="width: 30%;"></textarea>
+            <button class="learn-more-button">Create Strain Network</button>
+        </div>
     </form>
     
 
