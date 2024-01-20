@@ -28,7 +28,7 @@
             <p>Show Archived Networks</p>
         </div>
     </div>
-    <form action="/networks-build" method="post">
+    <form action="/networks-build" method="post" class="growercreatenetwork" style="width: 50vw;">
         <div>
             <h4>Create New Strain Network</h4>
             <label for="networkname">Network Name</label><br>
@@ -40,12 +40,12 @@
                     <label class="custom-control-label" for="customRadioInline1">Non-Participating Model</label>
                 </div>
                 <div class="custom-control custom-radio custom-control-inline">
-                    <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                    <input type="radio" id="customRadioInline2" name="customRadioInline2" class="custom-control-input">
                     <label class="custom-control-label" for="customRadioInline2">Participating Model</label>
                 </div>
             </div>
             <label for="network-description">Description</label><br>
-            <textarea class="form-control" aria-label="network-description" name="network-description" maxlength="500" placeholder="Enter Item Description" style="width: 30%;"></textarea>
+            <textarea aria-label="network-description" name="network-description" maxlength="500" placeholder="Enter Item Description"></textarea><br>
             <button class="learn-more-button">Create Strain Network</button>
         </div>
     </form>

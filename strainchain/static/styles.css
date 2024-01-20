@@ -218,6 +218,9 @@ main {
     padding-right: 1%;
     padding-left: 1%;
 }
+.growercreatenetwork {
+    float: left;
+}
 .growerfeatureset {
     display: flex;
     flex-direction: row;
@@ -351,8 +354,6 @@ main {
 .welcomeimgs img {
     margin-bottom: 1%;
 }
-
-
 
 /* Toggle Switch CSS */
     /* The switch - the box around the slider */
