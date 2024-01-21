@@ -14,6 +14,7 @@
         <label for="lastname"><h5>Last Name</h5></label>
         <input autocomplete="off" class="form-control mx-auto w-auto" id="lastname" name="lastname" placeholder="Last Name" type="text">
     </div>
+    <br>
     <div class="mb-3">
         <label for="emailaddress"><h5>Email Address</h5></label>
         <input autocomplete="off" class="form-control mx-auto w-auto" id="emailaddress" name="emailaddress" placeholder="Email Address" type="text">
@@ -22,14 +23,15 @@
         <label for="username"><h5>Username</h5></label>
         <input autocomplete="off" class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
     </div>
-    <div class="mb-3">
+    <div class="mb-3 form-check-inline">
         <label for="password"><h5>Password</h5></label>
         <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
     </div>
-    <div class="mb-3">
+    <div class="mb-3 form-check-inline">
         <label for="confirmpassword"><h5>Confirm Password</h5></label>
         <input class="form-control mx-auto w-auto" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" type="password">
     </div>
+    <br>
     <label for="registrationtype"><h5>Account Type</h5></label>
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -39,6 +41,7 @@
         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
         <label class="form-check-label" for="inlineRadio2">Licensed Grower</label>
     </div>
+    <br>
     <button class="btn" type="submit" style="background-color: #31c845;">Register</button>
 </form>
 {% endblock %}
