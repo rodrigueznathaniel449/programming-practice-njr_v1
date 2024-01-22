@@ -29,29 +29,35 @@
     </div>
     <hr class="divider">
     <div class="growerfeatureset">
-        <form action="/networks-build" method="post" style="width: 50vw;">
-            <div>
-                <h3>Create New Strain Network</h3>
-                <label for="networkname" class="form-check-label"><h5>Network Name</h5></label><br>
-                <input autocomplete="off" class="form-control mx-auto w-auto" id="networkname" name="networkname" placeholder="Enter Item Name" type="text"><br>
-                <label for="AccessModelSelect" class="form-check-label"><h5>Access Model</h5></label>
-                <div name="AccessModelSelect">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Non-Participating Model</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                        <label class="form-check-label" for="inlineRadio2">Global Participation Model</label>
+        <form action="/networks-build" method="post" style="width: 50vw; padding-left: 1%; padding-right: 1%;" id="growernetworkbuildform">
+            <div class="growernetworkbuilder">
+                <div>
+                    <h3>Create New Strain Network</h3>
+                </div>
+                <div>
+                    <label for="networkname" class="form-check-label"><h5>Network Name</h5></label>
+                    <input autocomplete="off" class="form-control mx-auto w-auto" id="networkname" name="networkname" placeholder="Enter Item Name" type="text">
+                </div>
+                <div>
+                    <label for="AccessModelSelect" class="form-check-label"><h5>Access Model</h5></label>
+                    <div name="AccessModelSelect">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Non-Participating Model</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">Global Participation Model</label>
+                        </div>
                     </div>
                 </div>
-                <br>
                 <div class="form-group">
                     <label for="networkdescription">Description</label>
                     <textarea class="form-control mx-auto w-auto" id="networkdescription" maxlength="500" placeholder="Enter Item Description"></textarea>
                 </div>
-                <br>
-                <button class="btn" type="submit" style="background-color: #31c845;">Create Strain Network</button>
+                <div>
+                    <button class="btn" type="submit" style="background-color: #31c845;">Create Strain Network</button>
+                </div>
             </div>
         </form>
         <div class="groweraccessmodelsall">
