@@ -247,6 +247,7 @@ main {
     margin-right: 20%;
     border: 1px solid;
     border-color: lightgray;
+    border-radius: 5%;
 }
 .growerfeatureset {
     display: flex;

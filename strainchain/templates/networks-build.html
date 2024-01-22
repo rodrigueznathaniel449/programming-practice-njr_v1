@@ -40,16 +40,11 @@
                 </div>
                 <div>
                     <label for="AccessModelSelect" class="form-check-label"><h5>Access Model</h5></label>
-                    <div name="AccessModelSelect">
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                            <label class="form-check-label" for="inlineRadio1">Non-Participating Model</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-                            <label class="form-check-label" for="inlineRadio2">Global Participation Model</label>
-                        </div>
-                    </div>
+                    <select name="AccessModelSelect" id="AccessModelSelect" required>
+                        <option disabled selected="true">Choose A Model</option>
+                        <option value="Non-Participating Network">Non-Participating Network</option>
+                        <option value="Public Participating Network">Public Participating Network</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="networkdescription">Description</label>
