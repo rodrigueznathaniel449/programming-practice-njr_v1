@@ -221,14 +221,20 @@ main {
 .groweraccessmodelsall {
     padding-top: 4%;
     padding-bottom: 4%;
+    background-color: white;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 .grower_access_models_title {
-    padding-left: 30%;
-    padding-right: 30%;
+    margin-left: 30%;
+    margin-right: 30%;
 }
 .growermodel {
-    padding-left: 20%;
-    padding-right: 20%;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 .growerfeatureset {
     display: flex;
