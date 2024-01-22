@@ -218,6 +218,18 @@ main {
     padding-right: 1%;
     padding-left: 1%;
 }
+.groweraccessmodelsall {
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+.grower_access_models_title {
+    padding-left: 30%;
+    padding-right: 30%;
+}
+.growermodel {
+    padding-left: 20%;
+    padding-right: 20%;
+}
 .growerfeatureset {
     display: flex;
     flex-direction: row;
