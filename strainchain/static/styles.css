@@ -226,6 +226,10 @@ main {
 .growerfeatures {
     padding: 1%;
 }
+.growericon {
+    padding-left: 1%;
+    padding-right: 1%;
+}
 .form-control {
     width: 30%;
 }
