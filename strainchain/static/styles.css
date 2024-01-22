@@ -245,6 +245,8 @@ main {
 .growermodel {
     margin-left: 20%;
     margin-right: 20%;
+    border: 1px solid;
+    border-color: lightgray;
 }
 .growerfeatureset {
     display: flex;
