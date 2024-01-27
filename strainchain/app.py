@@ -177,6 +177,7 @@ def register():
             curr.execute("INSERT INTO users (first_name, last_name, email, username, password, user_type) VALUES (?, ?, ?, ?, ?, ?)", request.form.get("firstname"), request.form.get("lastname"), request.form.get("email"), request.form.get("username"), generate_password_hash(request.form.get("password")), request.form.get("AccountTypeSelect"))
             #Close DB Connection
             #Push User to Login Flow
+            conn.commit()
             curr.close()
             conn.close()
             return render_template("login.html")
