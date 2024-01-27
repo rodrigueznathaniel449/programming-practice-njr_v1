@@ -7,8 +7,11 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from helpers import login_required
 
 app = Flask(__name__)
-
-#Need to create and link DB here
+#Session Write to FileSystem in Dev Env/Demo
+#Change before PROD Launch
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
 
 @app.after_request
 def after_request(response):
