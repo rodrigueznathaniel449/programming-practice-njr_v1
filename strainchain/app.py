@@ -72,7 +72,28 @@ def myaccount():
 @app.route("/login",  methods=["GET", "POST"])
 def login():
     """Show the Login Page"""
-    return render_template("login.html")
+    if request.method == "POST":
+        #Ensure UN and PW are submitted
+        if not request.form.get("username"):
+            flash("Username Required")
+            return render_template("login.html")
+        elif not request.form.get("password"):
+            flash("Password Required")
+            return render_template("login.html")
+        #Query DB for UN if Exists
+        conn = psycopg2.connect("dbname=strainchain user=postgres")
+        curr = conn.cursor()
+        usercheck = curr.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        if len(usercheck) != 1 or not check_password_hash(usercheck[0]["password"], request.form.get("password")):
+            flash("Incorrect Username or Password")
+            curr.close()
+            conn.close()
+            return render_template("login.html")
+        else:
+            session["user_id"] = usercheck[0]["id"]
+            return redirect("/")
+    else:
+        return render_template("login.html")
 
 @app.route("/logout")
 def logout():
