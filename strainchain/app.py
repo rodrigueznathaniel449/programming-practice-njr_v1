@@ -82,9 +82,12 @@ def logout():
 
 @app.route("/register",  methods=["GET", "POST"])
 def register():
-    """Registration Page Logic"""
+    #Registration Page Logic
+    #If User is Registering
     if request.method == "POST":
+        #Clear Previous Activity
         session.clear()
+        #Check All Input Fields
         if not request.form.get("firstname"):
             flash("Please Provide First Name")
             return render_template("register.html")
@@ -106,7 +109,11 @@ def register():
         elif not request.form.get("AccountTypeSelect"):
             flash("Please Select Account Type")
             return render_template("register.html")
+        #verify username doesnt already exist
+        #ensure PW and Confirm Match
+        #If Passing Checks, Insert into DB table
         return render_template("login.html")
+    #Browsing User
     else:
         return render_template("register.html")
 
