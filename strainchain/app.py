@@ -92,6 +92,8 @@ def rts():
 @login_required
 def myaccount():
     """Show the My Account Page"""
+    if request.method == "POST":
+        return render_template("login.html")
     return render_template("myaccount.html")
 
 @app.route("/login",  methods=["GET", "POST"])

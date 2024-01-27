@@ -9,16 +9,16 @@
 <h3>Here you can small updates to your TYPE account</h3>
 <form action="/myaccount" method="post">
     <div class="mb-3">
-        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="currentuser" name="currentuser" placeholder="Username" type="text">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="currentuser" name="currentuser" placeholder="Username" type="text" required>
     </div>
     <div class="mb-3">
-        <input class="form-control mx-auto w-auto" id="currentpw" name="currentpw" placeholder="Current Password" type="password">
+        <input class="form-control mx-auto w-auto" id="currentpw" name="currentpw" placeholder="Current Password" type="password" required>
     </div>
     <div class="mb-3">
-        <input class="form-control mx-auto w-auto" id="updatepass" name="updatepass" placeholder="New Password" type="password">
+        <input class="form-control mx-auto w-auto" id="updatepass" name="updatepass" placeholder="New Password" type="password" required>
     </div>
     <div class="mb-3">
-        <input class="form-control mx-auto w-auto" id="updatepasstwo" name="updatepasstwo" placeholder="Confirm New Password" type="password">
+        <input class="form-control mx-auto w-auto" id="updatepasstwo" name="updatepasstwo" placeholder="Confirm New Password" type="password" required>
     </div>
     <button class="btn" type="submit" style="background-color: #31c845;">Update Password</button>
 </form>
