@@ -114,9 +114,23 @@ def register():
             flash("Password and Confirmation Must Match")
             return render_template("register.html")
         #verify username doesnt already exist
+        conn = psycopg2.connect("dbname=strainchain user=postgres")
+        curr = conn.cursor()
+        usercheck = curr.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        #If Exists, close DB Connection, and return registration page
+        if len(usercheck) != 0:
+            flash("Username Already Taken")
+            curr.close()
+            conn.close()
+            return render_template("register.html")
         #If Passing Checks, Insert into DB table
-        #Push User to Login Flow
-        return render_template("login.html")
+        elif len(usercheck) == 0:
+            curr.execute("INSERT INTO users (first_name, last_name, email, username, password, user_type) VALUES (?, ?, ?, ?, ?, ?)", request.form.get("firstname"), request.form.get("lastname"), request.form.get("email"), request.form.get("username"), generate_password_hash(request.form.get("password")), request.form.get("AccountTypeSelect"))
+            #Close DB Connection
+            #Push User to Login Flow
+            curr.close()
+            conn.close()
+            return render_template("login.html")
     #Browsing User
     else:
         return render_template("register.html")
