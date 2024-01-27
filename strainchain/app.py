@@ -178,7 +178,7 @@ def register():
             un = request.form.get("username")
             pw = generate_password_hash(request.form.get("password"))
             at = request.form.get("AccountTypeSelect")
-            curr.execute("INSERT INTO users (first_name, last_name, email, username, password, user_type) VALUES (%s, %s, %s, %s, %s, %s)", (fn, ln, em, un, pw, at,))
+            curr.execute("INSERT INTO users (first_name, last_name, email, username, password, account_type) VALUES (%s, %s, %s, %s, %s, %s)", (fn, ln, em, un, pw, at,))
             #Close DB Connection
             #Push User to Login Flow
             conn.commit()
