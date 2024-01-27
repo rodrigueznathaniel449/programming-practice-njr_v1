@@ -99,11 +99,13 @@ def myaccount():
         curr = conn.cursor()
         curr.execute("SELECT first_name FROM users WHERE id = %s", (session["user_id"],))
         name = curr.fetchall()
+        firstname = name[0][0]
         curr.execute("SELECT account_type FROM users WHERE id = %s", (session["user_id"],))
         account = curr.fetchall()
+        account_type = account[0][0]
         curr.close()
         conn.close()
-        return render_template("myaccount.html", name=name, account=account)
+        return render_template("myaccount.html", firstname=name, account_type=account)
 
 @app.route("/login",  methods=["GET", "POST"])
 def login():
