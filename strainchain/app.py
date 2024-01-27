@@ -114,7 +114,7 @@ def login():
         password = request.form.get("password")
         curr.execute("SELECT password FROM users WHERE username = %s", (username,))
         passhash = curr.fetchall()
-        if len(usercheck) != 1 or not check_password_hash(passhash, password):
+        if len(usercheck) != 1 or not check_password_hash(passhash[0][0], password):
             flash("Incorrect Username or Password")
             curr.close()
             conn.close()
