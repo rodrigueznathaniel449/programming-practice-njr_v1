@@ -5,43 +5,52 @@
 {% endblock %}
 
 {% block main %}
-<form action="/register" method="post">
-    <div class="mb-3 mt-5 form-check-inline">
-        <label for="firstname"><h5>First Name</h5></label>
-        <input autofocus autocomplete="off" class="form-control mx-auto w-auto" id="firstname" name="firstname" placeholder="First Name" type="text" required>
-    </div>
-    <div class="mb-3 mt-5 form-check-inline">
-        <label for="lastname"><h5>Last Name</h5></label>
-        <input autocomplete="off" class="form-control mx-auto w-auto" id="lastname" name="lastname" placeholder="Last Name" type="text" required>
-    </div>
-    <br>
-    <div class="mb-3 mt-3 form-check-inline">
-        <label for="emailaddress"><h5>Email Address</h5></label>
-        <input autocomplete="off" class="form-control mx-auto w-auto" id="emailaddress" name="emailaddress" placeholder="Email Address" type="text" required>
-    </div>
-    <div class="mb-3 mt-3 form-check-inline">
-        <label for="username"><h5>Username</h5></label>
-        <input autocomplete="off" class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text" required>
-    </div>
-    <br>
-    <div class="mb-3 mt-3 form-check-inline">
-        <label for="password"><h5>Password</h5></label>
-        <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password" required>
-    </div>
-    <div class="mb-3 mt-3 form-check-inline">
-        <label for="confirmpassword"><h5>Confirm Password</h5></label>
-        <input class="form-control mx-auto w-auto" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" type="password" required>
-    </div>
-    <br>
-    <div>
-        <label for="AccountTypeSelect" class="form-check-label"><h5>Account Type</h5></label>
-        <select class="form-select mx-auto w-auto" name="AccountTypeSelect" id="AccountTypeSelect" required>
-            <option disabled selected="true">Choose An Account Type</option>
-            <option value="Medical User">Medical User</option>
-            <option value="Licensed Grower">Licensed Grower</option>
-        </select>
-    </div>
-    <br>
-    <button class="btn" type="submit" style="background-color: #31c845;">Register</button>
-</form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-info" role = "alert">
+                    {{ message }}
+                </div>
+            {% endfor%}
+        {% endif %}
+    {% endwith %}
+    <form action="/register" method="post">
+        <div class="mb-3 mt-5 form-check-inline">
+            <label for="firstname"><h5>First Name</h5></label>
+            <input autofocus autocomplete="off" class="form-control mx-auto w-auto" id="firstname" name="firstname" placeholder="First Name" type="text" required>
+        </div>
+        <div class="mb-3 mt-5 form-check-inline">
+            <label for="lastname"><h5>Last Name</h5></label>
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="lastname" name="lastname" placeholder="Last Name" type="text" required>
+        </div>
+        <br>
+        <div class="mb-3 mt-3 form-check-inline">
+            <label for="emailaddress"><h5>Email Address</h5></label>
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="emailaddress" name="emailaddress" placeholder="Email Address" type="text" required>
+        </div>
+        <div class="mb-3 mt-3 form-check-inline">
+            <label for="username"><h5>Username</h5></label>
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text" required>
+        </div>
+        <br>
+        <div class="mb-3 mt-3 form-check-inline">
+            <label for="password"><h5>Password</h5></label>
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password" required>
+        </div>
+        <div class="mb-3 mt-3 form-check-inline">
+            <label for="confirmpassword"><h5>Confirm Password</h5></label>
+            <input class="form-control mx-auto w-auto" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" type="password" required>
+        </div>
+        <br>
+        <div>
+            <label for="AccountTypeSelect" class="form-check-label"><h5>Account Type</h5></label>
+            <select class="form-select mx-auto w-auto" name="AccountTypeSelect" id="AccountTypeSelect" required>
+                <option disabled selected="true">Choose An Account Type</option>
+                <option value="Medical User">Medical User</option>
+                <option value="Licensed Grower">Licensed Grower</option>
+            </select>
+        </div>
+        <br>
+        <button class="btn" type="submit" style="background-color: #31c845;">Register</button>
+    </form>
 {% endblock %}
