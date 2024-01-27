@@ -182,6 +182,11 @@ def login():
             curr.close()
             conn.close()
             return render_template("login.html")
+        if len(usercheck) == 0:
+            flash("Account Does Not Exist")
+            curr.close()
+            conn.close()
+            return render_template("login.html")
         else:
             #LOG SESSION ID
             curr.execute("SELECT id FROM users WHERE username = (%s)", (username,))
