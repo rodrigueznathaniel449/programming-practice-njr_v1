@@ -7,12 +7,22 @@ from werkzeug.security import check_password_hash, generate_password_hash
 from helpers import login_required
 
 app = Flask(__name__)
+
 #Session Write to FileSystem in Dev Env/Demo
 #Change before PROD Launch of course
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
-app.config["SESSION_FILE_DIR"] = "/app/sessions"
+app.config["SESSION_FILE_DIR"] = "/app/flask_session"
 Session(app)
+
+#Define DB Connection Params
+db_params = {
+    'dbname': 'strainchain',
+    'user': 'postgres',
+    'password': '\db\password.txt',
+    'host': 'db',
+    'port': '5432',
+}
 
 @app.after_request
 def after_request(response):
@@ -85,7 +95,7 @@ def login():
             flash("Password Required")
             return render_template("login.html")
         #Query DB for UN if Exists
-        conn = psycopg2.connect("dbname=strainchain user=postgres")
+        conn = psycopg2.connect(**db_params)
         curr = conn.cursor()
         usercheck = curr.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         if len(usercheck) != 1 or not check_password_hash(usercheck[0]["password"], request.form.get("password")):
@@ -142,7 +152,7 @@ def register():
             flash("Password and Confirmation Must Match")
             return render_template("register.html")
         #verify username doesnt already exist
-        conn = psycopg2.connect("dbname=strainchain user=postgres")
+        conn = psycopg2.connect(**db_params)
         curr = conn.cursor()
         usercheck = curr.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
         #If Exists, close DB Connection, and return registration page
