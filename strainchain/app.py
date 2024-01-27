@@ -109,7 +109,8 @@ def login():
         conn = psycopg2.connect(**db_params)
         curr = conn.cursor()
         username = request.form.get("username")
-        usercheck = curr.execute("SELECT * FROM users WHERE username = (%s)", (username,))
+        curr.execute("SELECT * FROM users WHERE username = (%s)", (username,))
+        usercheck = curr.fetchall()
         if len(usercheck) != 1 or not check_password_hash(usercheck[0]["password"], request.form.get("password")):
             flash("Incorrect Username or Password")
             curr.close()
@@ -167,15 +168,10 @@ def register():
         conn = psycopg2.connect(**db_params)
         curr = conn.cursor()
         username = request.form.get("username")
-        usercheck = curr.execute("SELECT * FROM users WHERE username = (%s)", (username,))
-        #If Exists, close DB Connection, and return registration page
-        if len(usercheck) != 0:
-            flash("Username Already Taken")
-            curr.close()
-            conn.close()
-            return render_template("register.html")
+        curr.execute("SELECT * FROM users WHERE username = (%s)", (username,))
+        usercheck = curr.fetchall()
         #If Passing Checks, Insert into DB table
-        elif len(usercheck) == 0:
+        if len(usercheck) == 0:
             fn = request.form.get("firstname")
             ln = request.form.get("lastname")
             em = request.form.get("email")
@@ -189,6 +185,12 @@ def register():
             curr.close()
             conn.close()
             return render_template("login.html")
+        #If Exists, close DB Connection, and return registration page
+        elif len(usercheck) != 0:
+            flash("Username Already Taken")
+            curr.close()
+            conn.close()
+            return render_template("register.html")
     #Browsing User
     else:
         return render_template("register.html")
