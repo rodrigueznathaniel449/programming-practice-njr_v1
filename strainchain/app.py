@@ -15,11 +15,22 @@ app.config["SESSION_TYPE"] = "filesystem"
 app.config["SESSION_FILE_DIR"] = "/app/flask_session"
 Session(app)
 
+# Define the path to the password file
+password_file_path = '/run/secrets/db-password'  # Update this path as needed
+
+# Read the password from the file
+try:
+    with open(password_file_path, 'r') as password_file:
+        password = password_file.read().strip()  # Remove any leading/trailing whitespace or newlines
+except FileNotFoundError as e:
+    print(f"Error: {e}")
+    # Handle the error, e.g., log it, exit gracefully, or provide a default password
+
 #Define DB Connection Params
 db_params = {
     'dbname': 'strainchain',
     'user': 'postgres',
-    'password': '\db\password.txt',
+    'password': password,
     'host': 'db',
     'port': '5432',
 }
