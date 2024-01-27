@@ -94,7 +94,16 @@ def myaccount():
     """Show the My Account Page"""
     if request.method == "POST":
         return render_template("login.html")
-    return render_template("myaccount.html")
+    else:
+        conn = psycopg2.connect(**db_params)
+        curr = conn.cursor()
+        curr.execute("SELECT first_name FROM users WHERE id = %s", (session["user_id"],))
+        name = curr.fetchall()
+        curr.execute("SELECT account_type FROM users WHERE id = %s", (session["user_id"],))
+        account = curr.fetchall()
+        curr.close()
+        conn.close()
+        return render_template("myaccount.html", name=name, account=account)
 
 @app.route("/login",  methods=["GET", "POST"])
 def login():

@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block main %}
-<h2>Hello USER</h2>
-<h3>Here you can small updates to your TYPE account</h3>
+<h2>Hello {{ name }}</h2>
+<h3>Here you can small updates to your {{ account }} account</h3>
 <form action="/myaccount" method="post">
     <div class="mb-3">
         <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="currentuser" name="currentuser" placeholder="Username" type="text" required>
