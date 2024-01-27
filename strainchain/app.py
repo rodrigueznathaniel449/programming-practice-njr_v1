@@ -109,9 +109,13 @@ def register():
         elif not request.form.get("AccountTypeSelect"):
             flash("Please Select Account Type")
             return render_template("register.html")
-        #verify username doesnt already exist
         #ensure PW and Confirm Match
+        if request.form.get("password") != request.form.get("confirmpassword"):
+            flash("Password and Confirmation Must Match")
+            return render_template("register.html")
+        #verify username doesnt already exist
         #If Passing Checks, Insert into DB table
+        #Push User to Login Flow
         return render_template("login.html")
     #Browsing User
     else:
