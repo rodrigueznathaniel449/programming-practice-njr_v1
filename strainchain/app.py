@@ -82,8 +82,33 @@ def logout():
 
 @app.route("/register",  methods=["GET", "POST"])
 def register():
-    """Show the Registration Page"""
-    return render_template("register.html")
+    """Registration Page Logic"""
+    if request.method == "POST":
+        session.clear()
+        if not request.form.get("firstname"):
+            flash("Please Provide First Name")
+            return render_template("register.html")
+        elif not request.form.get("lastname"):
+            flash("Please Provide Last Name")
+            return render_template("register.html")
+        elif not request.form.get("emailaddress"):
+            flash("Please Provide Email Address")
+            return render_template("register.html")
+        elif not request.form.get("username"):
+            flash("Please Provide Username")
+            return render_template("register.html")
+        elif not request.form.get("password"):
+            flash("Please Provide Password")
+            return render_template("register.html")
+        elif not request.form.get("confirmpassword"):
+            flash("Please Provide Confirmation Password")
+            return render_template("register.html")
+        elif not request.form.get("AccountTypeSelect"):
+            flash("Please Select Account Type")
+            return render_template("register.html")
+        return render_template("login.html")
+    else:
+        return render_template("register.html")
 
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
