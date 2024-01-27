@@ -108,7 +108,8 @@ def login():
         #Query DB for UN if Exists
         conn = psycopg2.connect(**db_params)
         curr = conn.cursor()
-        usercheck = curr.execute("SELECT * FROM users WHERE username = (%s)", (request.form.get("username")))
+        username = request.form.get("username")
+        usercheck = curr.execute("SELECT * FROM users WHERE username = (%s)", (username,))
         if len(usercheck) != 1 or not check_password_hash(usercheck[0]["password"], request.form.get("password")):
             flash("Incorrect Username or Password")
             curr.close()
@@ -165,7 +166,8 @@ def register():
         #verify username doesnt already exist
         conn = psycopg2.connect(**db_params)
         curr = conn.cursor()
-        usercheck = curr.execute("SELECT * FROM users WHERE username = (%s)", (request.form.get("username")))
+        username = request.form.get("username")
+        usercheck = curr.execute("SELECT * FROM users WHERE username = (%s)", (username,))
         #If Exists, close DB Connection, and return registration page
         if len(usercheck) != 0:
             flash("Username Already Taken")
@@ -174,7 +176,13 @@ def register():
             return render_template("register.html")
         #If Passing Checks, Insert into DB table
         elif len(usercheck) == 0:
-            curr.execute("INSERT INTO users (first_name, last_name, email, username, password, user_type) VALUES (%s, %s, %s, %s, %s, %s)", (request.form.get("firstname"), request.form.get("lastname"), request.form.get("email"), request.form.get("username"), generate_password_hash(request.form.get("password")), request.form.get("AccountTypeSelect")))
+            fn = request.form.get("firstname")
+            ln = request.form.get("lastname")
+            em = request.form.get("email")
+            un = request.form.get("username")
+            pw = generate_password_hash(request.form.get("password"))
+            at = request.form.get("AccountTypeSelect")
+            curr.execute("INSERT INTO users (first_name, last_name, email, username, password, user_type) VALUES (%s, %s, %s, %s, %s, %s)", (fn, ln, em, un, pw, at,))
             #Close DB Connection
             #Push User to Login Flow
             conn.commit()
