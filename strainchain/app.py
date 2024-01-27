@@ -120,8 +120,10 @@ def login():
             conn.close()
             return render_template("login.html")
         else:
-            #CREATE SESSION ID
-            session["user_id"] = usercheck[0]["id"]
+            #LOG SESSION ID
+            curr.execute("SELECT id FROM users WHERE username = (%s)", (username,))
+            idcheck = curr.fetchall()
+            session["user_id"] = idcheck[0][0]
             curr.close()
             conn.close()
             return redirect("/")
