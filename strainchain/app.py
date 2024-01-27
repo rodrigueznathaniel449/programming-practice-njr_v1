@@ -135,14 +135,13 @@ def myaccount():
             curr.close()
             conn.close()
             return redirect("/")
-        else:
-            updatehash = generate_password_hash(update)
-            curr.execute("UPDATE users SET password = (%s) WHERE username = (%s)", (updatehash, username,))
-            conn.commit()
-            curr.close()
-            conn.close()
-            flash("Password Updated")
-            return render_template("login.html")
+        updatehash = generate_password_hash(update)
+        curr.execute("UPDATE users SET password = (%s) WHERE username = (%s)", (updatehash, username,))
+        conn.commit()
+        curr.close()
+        conn.close()
+        flash("Password Updated")
+        return render_template("login.html")
     else:
         return render_template("myaccount.html")
 
