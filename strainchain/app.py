@@ -174,7 +174,7 @@ def register():
         if len(usercheck) == 0:
             fn = request.form.get("firstname")
             ln = request.form.get("lastname")
-            em = request.form.get("email")
+            em = request.form.get("emailaddress")
             un = request.form.get("username")
             pw = generate_password_hash(request.form.get("password"))
             at = request.form.get("AccountTypeSelect")
