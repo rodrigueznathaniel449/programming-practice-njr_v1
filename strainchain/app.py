@@ -93,7 +93,56 @@ def rts():
 def myaccount():
     """Show the My Account Page"""
     if request.method == "POST":
-        return render_template("login.html")
+        if not request.form.get("currentuser"):
+            flash("Missing Current Username")
+            return redirect("/")
+        elif not request.form.get("currentpw"):
+            flash("Missing Current Password")
+            return redirect("/")
+        elif not request.form.get("updatepw"):
+            flash("Missing New Password")
+            return redirect("/")
+        elif not request.form.get("updatepwconfirm"):
+            flash("Missing Confirmation Password")
+            return redirect("/")
+        conn = psycopg2.connect(**db_params)
+        curr = conn.cursor()
+        username = request.form.get("currentuser")
+        curr.execute("SELECT * FROM users WHERE username = (%s)", (username,))
+        usercheck = curr.fetchall()
+        if len(usercheck) != 1:
+            flash("Username Not Found")
+            curr.close()
+            conn.close()
+            return redirect("/")
+        password = request.form.get("currentpw")
+        curr.execute("SELECT password FROM users WHERE username = (%s)", (username,))
+        passhash = curr.fetchall()
+        bool = check_password_hash(passhash[0][0], password)
+        if bool != True:
+            flash("Password Incorrect")
+            curr.close()
+            conn.close()
+            return redirect("/")
+        update = request.form.get("updatepw")
+        updatecheck = request.form.get("updatepwconfirm")
+        if update != updatecheck:
+            flash("New Passwords Must Match")
+            curr.close()
+            conn.close()
+            return redirect("/")
+        elif password == updatepw:
+            flash("New Password Cannot Match Old Password")
+            curr.close()
+            conn.close()
+            return redirect("/")
+        else:
+            updatehash = generate_password_hash(update)
+            curr.execute("UPDATE users SET password = (%s) WHERE username = (%s)", (updatehash, username,))
+            curr.close()
+            conn.close()
+            flash("Password Updated")
+            return render_template("login.html")
     else:
         return render_template("myaccount.html")
 
