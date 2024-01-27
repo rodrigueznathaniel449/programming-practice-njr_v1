@@ -24,7 +24,6 @@ try:
         password = password_file.read().strip()  # Remove any leading/trailing whitespace or newlines
 except FileNotFoundError as e:
     print(f"Error: {e}")
-    # Handle the error, e.g., log it, exit gracefully, or provide a default password
 
 #Define DB Connection Params
 db_params = {
