@@ -95,6 +95,8 @@ def login():
         else:
             #CREATE SESSION ID
             session["user_id"] = usercheck[0]["id"]
+            curr.close()
+            conn.close()
             return redirect("/")
     else:
         return render_template("login.html")
