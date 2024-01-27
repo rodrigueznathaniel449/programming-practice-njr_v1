@@ -90,6 +90,7 @@ def login():
             conn.close()
             return render_template("login.html")
         else:
+            #CREATE SESSION ID
             session["user_id"] = usercheck[0]["id"]
             return redirect("/")
     else:
