@@ -11,6 +11,7 @@ app = Flask(__name__)
 #Change before PROD Launch
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
+app.config["SESSION_FILE_DIR"] = "/app/sessions"
 Session(app)
 
 @app.after_request
