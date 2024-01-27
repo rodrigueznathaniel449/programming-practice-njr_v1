@@ -104,25 +104,34 @@ def myaccount():
         elif not request.form.get("updatepwconfirm"):
             flash("Missing Confirmation Password")
             return redirect("/")
+        #If Checks Pass, Connect to DB
         conn = psycopg2.connect(**db_params)
         curr = conn.cursor()
+        #Grab Current User from Input, Check if User Exists
         username = request.form.get("currentuser")
         curr.execute("SELECT * FROM users WHERE username = (%s)", (username,))
         usercheck = curr.fetchall()
+        #If User doesnt exist, close DB connection and return to home
         if len(usercheck) != 1:
             flash("Username Not Found")
             curr.close()
             conn.close()
             return redirect("/")
+        #grab current PW from user input
+        #Compare against PW from Session ID
         password = request.form.get("currentpw")
-        curr.execute("SELECT password FROM users WHERE username = (%s)", (username,))
+        curr.execute("SELECT password FROM users WHERE id = (%s)", (session["user_id"],))
         passhash = curr.fetchall()
+        #Check PW Hash from current PW input vs DB
         bool = check_password_hash(passhash[0][0], password)
+        #If not equal
         if bool != True:
             flash("Password Incorrect")
             curr.close()
             conn.close()
             return redirect("/")
+        #Check that Update PW and Confirm PW Match
+        #Check that Update PW is different from Old PW
         update = request.form.get("updatepw")
         updatecheck = request.form.get("updatepwconfirm")
         if update != updatecheck:
@@ -135,7 +144,10 @@ def myaccount():
             curr.close()
             conn.close()
             return redirect("/")
+        #Generate hash on new PW chosen by user
         updatehash = generate_password_hash(update)
+        #update PW in DB
+        #Send User to Login
         curr.execute("UPDATE users SET password = (%s) WHERE username = (%s)", (updatehash, username,))
         conn.commit()
         curr.close()
