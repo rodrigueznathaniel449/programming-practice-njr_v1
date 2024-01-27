@@ -8,7 +8,7 @@ from helpers import login_required
 
 app = Flask(__name__)
 #Session Write to FileSystem in Dev Env/Demo
-#Change before PROD Launch
+#Change before PROD Launch of course
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 app.config["SESSION_FILE_DIR"] = "/app/sessions"
