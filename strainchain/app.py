@@ -95,17 +95,7 @@ def myaccount():
     if request.method == "POST":
         return render_template("login.html")
     else:
-        conn = psycopg2.connect(**db_params)
-        curr = conn.cursor()
-        curr.execute("SELECT first_name FROM users WHERE id = %s", (session["user_id"],))
-        name = curr.fetchall()
-        firstname = name[0][1]
-        curr.execute("SELECT account_type FROM users WHERE id = %s", (session["user_id"],))
-        account = curr.fetchall()
-        account_type = account[0][1]
-        curr.close()
-        conn.close()
-        return render_template("myaccount.html", firstname=name, account_type=account)
+        return render_template("myaccount.html")
 
 @app.route("/login",  methods=["GET", "POST"])
 def login():
