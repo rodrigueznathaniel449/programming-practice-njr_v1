@@ -139,7 +139,7 @@ def myaccount():
             curr.close()
             conn.close()
             return redirect("/")
-        elif password == updatepw:
+        elif password == update:
             flash("New Password Cannot Match Old Password")
             curr.close()
             conn.close()
