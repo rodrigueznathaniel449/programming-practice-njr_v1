@@ -24,7 +24,7 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=example
+      - POSTGRES_DB=strainchain
       - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
     expose:
       - 5432
