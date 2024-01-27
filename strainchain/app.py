@@ -139,6 +139,7 @@ def myaccount():
         else:
             updatehash = generate_password_hash(update)
             curr.execute("UPDATE users SET password = (%s) WHERE username = (%s)", (updatehash, username,))
+            conn.commit()
             curr.close()
             conn.close()
             flash("Password Updated")
