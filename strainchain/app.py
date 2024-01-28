@@ -161,6 +161,7 @@ def myaccount():
 @app.route("/login",  methods=["GET", "POST"])
 def login():
     """Show the Login Page"""
+    session.clear()
     if request.method == "POST":
         #Ensure UN and PW are submitted
         if not request.form.get("username"):
