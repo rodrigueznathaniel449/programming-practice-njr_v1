@@ -83,7 +83,11 @@ def networks():
 @login_required
 def networksbuild():
     """Show the Networks Learn Page"""
-    return render_template("networks-build.html")
+    if request.method == "POST":
+        flash("Testing")
+        return render_template("networks-build.html")
+    else:
+        return render_template("networks-build.html")
 
 @app.route("/rts-learn",  methods=["GET", "POST"])
 def rts():
