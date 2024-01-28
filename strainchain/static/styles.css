@@ -246,13 +246,33 @@ main {
     margin-left: 1%;
     margin-right: 1%;
 }
-.growerfeatures {
+.growertitleset {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10%;
+    padding-right: 10%;
     padding-bottom: 0%;
-    padding: 2%;
+    padding-top: 2%;
+}
+#growertitle {
+    padding-left: 0%;
+    padding-right: 4%;
+}
+#growernetworksearch {
+    padding-left: 4%;
+    padding-right: 4%;
+}
+#growercheckbox {
+    padding-left: 8%;
+    padding-right: 1%;
+}
+#growercheckboxtitle {
+    padding-left: 1%;
+    padding-right: 0%;
 }
 .growericon {
     padding-left: 1%;
-    padding-right: 1%;
+    padding-right: 2%;
 }
 .growermodel {
     margin-left: 10%;
