@@ -34,11 +34,11 @@
                 <div>
                     <h3>Create New Strain Network</h3>
                 </div>
-                <div>
+                <div class="growernetworkoption">
                     <label for="networkname" class="form-check-label"><h5>Network Name</h5></label>
                     <input autocomplete="off" class="form-control mx-auto w-auto" id="networkname" name="networkname" placeholder="Enter Item Name" type="text" required>
                 </div>
-                <div>
+                <div class="growernetworkoption">
                     <label for="AccessModelSelect" class="form-check-label"><h5>Access Model</h5></label>
                     <select class="form-select mx-auto w-auto" name="AccessModelSelect" id="AccessModelSelect" required>
                         <option disabled selected="true">Choose A Model</option>
@@ -46,11 +46,11 @@
                         <option value="Public Participating Network">Public Participating Network</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="networkdescription">Description</label>
+                <div class="form-group growernetworkoption">
+                    <label for="networkdescription"><h5>Description</h5></label>
                     <textarea class="form-control mx-auto w-auto" id="networkdescription" maxlength="500" placeholder="Enter Item Description" type="text" required></textarea>
                 </div>
-                <div>
+                <div id="growernetworkbutton">
                     <button class="btn" type="submit" style="background-color: #31c845;">Create Strain Network</button>
                 </div>
             </div>
