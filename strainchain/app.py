@@ -84,7 +84,7 @@ def networks():
 def networksbuild():
     """Show the Networks Learn Page"""
     if request.method == "POST":
-        flash("Testing")
+        flash("test")
         return render_template("networks-build.html")
     else:
         return render_template("networks-build.html")
