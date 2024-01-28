@@ -154,6 +154,7 @@ def myaccount():
         curr.close()
         conn.close()
         flash("Password Updated")
+        session.clear()
         return render_template("login.html")
     else:
         return render_template("myaccount.html")
