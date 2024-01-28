@@ -370,6 +370,12 @@ main {
 .navbar-brand {
     padding-left: 1%;
 }
+.step {
+    display: none;
+}
+#step1 {
+    display: block;
+}
 .tech-integration {
     display: flex;
     flex-direction: row;

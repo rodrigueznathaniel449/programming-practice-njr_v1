@@ -28,7 +28,7 @@
         </div>
     </div>
     <hr class="divider">
-    <div class="growerfeatureset">
+    <div id="step1" class="growerfeatureset step">
         <form action="/networks-build" method="post" style="width: 50vw; padding-left: 1%; padding-right: 1%;" id="growernetworkbuildform">
             <div class="growernetworkbuilder">
                 <div>
@@ -51,7 +51,7 @@
                     <textarea class="form-control mx-auto w-auto" id="networkdescription" maxlength="500" placeholder="Enter Item Description" type="text" required></textarea>
                 </div>
                 <div id="growernetworkbutton">
-                    <button class="btn" type="submit" style="background-color: #31c845;">Create Strain Network</button>
+                    <button class="btn" id="next1" type="submit" style="background-color: #31c845;">Upload Certificate</button>
                 </div>
             </div>
         </form>
@@ -92,5 +92,20 @@
             </div>
         </div>
     </div>
-    
+    <div id="step2" class="growerfeatureset step">
+        <div id="growernetworkbutton">
+            <button class="btn" id="prev2" type="submit" style="background-color: #001722; color: #e5f4f2;">Previous</button>
+        </div>
+        <div id="growernetworkbutton">
+            <button class="btn" id="next2" type="submit" style="background-color: #31c845;">Input Additional Traits</button>
+        </div>
+    </div>
+    <div id="step3" class="growerfeatureset step">
+        <div id="growernetworkbutton">
+            <button class="btn" id="prev3" type="submit" style="background-color: #001722; color: #e5f4f2;">Previous</button>
+        </div>
+        <div id="growernetworkbutton">
+            <button class="btn" id="Submit" type="submit" style="background-color: #31c845;">Create Strain Network</button>
+        </div>
+    </div>
 {% endblock %}
