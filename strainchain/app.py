@@ -259,6 +259,7 @@ def register():
             conn.commit()
             curr.close()
             conn.close()
+            flash("Account Created Successfully")
             return render_template("login.html")
         #If Exists, close DB Connection, and return registration page
         elif len(usercheck) != 0:
