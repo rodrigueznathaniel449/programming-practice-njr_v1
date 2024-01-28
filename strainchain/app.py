@@ -153,8 +153,8 @@ def myaccount():
         conn.commit()
         curr.close()
         conn.close()
-        flash("Password Updated")
         session.clear()
+        flash("Password Updated")
         return render_template("login.html")
     else:
         return render_template("myaccount.html")
