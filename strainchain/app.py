@@ -25,7 +25,7 @@ try:
 except FileNotFoundError as e:
     print(f"Error: {e}")
 
-#Define DB Connection Params
+#Define DB Connection Params, use PW read from File
 db_params = {
     'dbname': 'strainchain',
     'user': 'postgres',
@@ -41,6 +41,8 @@ def after_request(response):
     response.headers["Expires"] = 0
     response.headers["Pragma"] = "no-cache"
     return response
+
+#Define Logic Flow for WebApp
 
 @app.route("/")
 def index():
@@ -162,6 +164,7 @@ def myaccount():
 @app.route("/login",  methods=["GET", "POST"])
 def login():
     """Show the Login Page"""
+    #Clear Session, Fresh Login 
     session.clear()
     if request.method == "POST":
         #Ensure UN and PW are submitted
@@ -201,6 +204,7 @@ def login():
             curr.close()
             conn.close()
             return redirect("/")
+    #Browsing User, render Page
     else:
         return render_template("login.html")
 
@@ -213,7 +217,7 @@ def logout():
 @app.route("/register",  methods=["GET", "POST"])
 def register():
     #Registration Page Logic
-    #If User is Registering
+    #If User is Registering, i.e. POST form is submitted
     if request.method == "POST":
         #Clear Previous Activity
         session.clear()
@@ -275,5 +279,6 @@ def register():
     else:
         return render_template("register.html")
 
+#App Init
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0")
