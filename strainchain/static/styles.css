@@ -229,8 +229,8 @@ main {
     flex-direction: column;
 }
 .groweraccessmodelsall {
-    padding-top: 4%;
-    padding-bottom: 4%;
+    padding-top: 2%;
+    padding-bottom: 2%;
     background-color: white;
     border: 1px solid;
     border-color: lightgray;
@@ -243,16 +243,18 @@ main {
     margin-right: 30%;
 }
 .growermodel {
-    margin-left: 20%;
-    margin-right: 20%;
-    border: 1px solid;
-    border-color: lightgray;
-    border-radius: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 2%;
 }
 .growerfeatureset {
     display: flex;
     flex-direction: row;
     padding: 1%;
+}
+.growerfeaturetext {
+    margin-left: 1%;
+    margin-right: 1%;
 }
 .growerfeatures {
     padding: 1%;
