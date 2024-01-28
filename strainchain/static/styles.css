@@ -229,6 +229,8 @@ main {
     flex-direction: column;
 }
 .grower_access_models_title {
+    display: flex;
+    flex-direction: row;
     margin-left: 15%;
     margin-right: 15%;
     justify-content: center;
@@ -259,9 +261,9 @@ main {
 .growermodelset {
     display: flex;
     flex-direction: row;
-    padding: 1%;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    justify-content: left;
 }
 .growernetworkbuilder {
     padding-top: 4%;

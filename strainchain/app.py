@@ -180,16 +180,19 @@ def login():
         password = request.form.get("password")
         curr.execute("SELECT password FROM users WHERE username = (%s)", (username,))
         passhash = curr.fetchall()
+        #If UN does not exist, or input PW when hashed is not equal to stored hash in DB, fail it
         if len(usercheck) != 1 or not check_password_hash(passhash[0][0], password):
             flash("Incorrect Username or Password")
             curr.close()
             conn.close()
             return render_template("login.html")
+        #Add Secondary Catch for incorrect login
         if len(usercheck) == 0:
             flash("Account Does Not Exist")
             curr.close()
             conn.close()
             return render_template("login.html")
+        #UN Exists and PW input hashed matches hash stored in DB
         else:
             #LOG SESSION ID
             curr.execute("SELECT id FROM users WHERE username = (%s)", (username,))
