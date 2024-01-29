@@ -14,8 +14,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         document.getElementById('next2').addEventListener('click', function(e) {
             e.preventDefault();
-            document.getElementById('step2').classList.add('d-none');
-            document.getElementById('step3').classList.remove('d-none');
+            if (fileInput.files.length === 0) {
+                alert('Please Upload a Lab Certificate')
+            } else {
+                document.getElementById('step2').classList.add('d-none');
+                document.getElementById('step3').classList.remove('d-none');
+            }
         });
         
         document.getElementById('prev3').addEventListener('click', function(e) {
@@ -23,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('step3').classList.add('d-none');
             document.getElementById('step2').classList.remove('d-none');
         });
+
     }
 });
 
