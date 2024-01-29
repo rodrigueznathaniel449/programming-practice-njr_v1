@@ -235,6 +235,17 @@ main {
     margin-right: 15%;
     justify-content: center;
 }
+#growercertupload {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: white;
+    border: 1px solid;
+    border-color: lightgray;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .growerfeatureset {
     display: flex;
     flex-direction: row;
