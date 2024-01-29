@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    if (window.location.pathname === '/networks-build.html') {
+    if (window.location.pathname === '/networks-build') {
         console.log('On networks-build page')
         document.getElementById('next1').addEventListener('click', function() {
             console.log('Next1 button clicked')
