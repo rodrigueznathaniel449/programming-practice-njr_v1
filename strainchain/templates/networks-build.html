@@ -11,7 +11,7 @@
         </div>
         <div id="growernetworksearch">
             <div class="input-group">
-                <input type="text" class="form-control mx-auto w-auto" placeholder="Network Search" aria-label="network-search">
+                <input type="text" class="form-control mx-auto w-auto" placeholder="Network Search" aria-label="network-search" id="networksearch">
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="submit" style="background-color: #31c845;">&#x1F50E;&#xFE0E;</button>
                 </div>
@@ -19,7 +19,7 @@
         </div>
         <div id="growercheckbox">
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" id="archivednetworkswitch">
                 <span class="slider round"></span>
             </label>
         </div>
@@ -38,7 +38,7 @@
         {% endif %}
     {% endwith %}
     <div id="step1" class="growerfeatureset step d-flex">
-        <form action="/networks-build" method="post" style="width: 50vw; padding-left: 1%; padding-right: 1%;" id="growernetworkbuildform">
+        <form action="/networks-build" method="post" style="width: 50vw; padding-left: 1%; padding-right: 1%;" id="growernetworkbuildform" name="growernetworkbuildform">
             <div class="growernetworkbuilder">
                 <div>
                     <h3>Create New Strain Network</h3>
