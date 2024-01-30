@@ -37,68 +37,85 @@
             {% endfor%}
         {% endif %}
     {% endwith %}
-    <div class="growerfeatureset">
-        <form action="/networks-build" method="post" style="width: 50vw; padding-left: 1%; padding-right: 1%;" id="growernetworkbuildform" name="growernetworkbuildform">
-            <div class="growernetworkbuilder">
-                <div>
-                    <h3>Create New Strain Network</h3>
+    <div id="step1">
+        <div class="growerfeatureset">
+            <form action="/networks-build" method="post" style="width: 50vw; padding-left: 1%; padding-right: 1%;" id="growernetworkbuildform" name="growernetworkbuildform">
+                <div class="growernetworkbuilder">
+                    <div>
+                        <h3>Create New Strain Network</h3>
+                    </div>
+                    <div class="growernetworkoption">
+                        <label for="networkname" class="form-check-label"><h5>Network Name</h5></label>
+                        <input autocomplete="off" class="form-control mx-auto w-auto" id="networkname" name="networkname" placeholder="Enter Item Name" type="text" required>
+                    </div>
+                    <div class="growernetworkoption">
+                        <label for="AccessModelSelect" class="form-check-label"><h5>Access Model</h5></label>
+                        <select class="form-select mx-auto w-auto" name="AccessModelSelect" id="AccessModelSelect" required>
+                            <option disabled selected="true">Choose A Model</option>
+                            <option value="Non-Participating Network">Non-Participating Network</option>
+                            <option value="Public Participating Network">Public Participating Network</option>
+                        </select>
+                    </div>
+                    <div class="form-group growernetworkoption">
+                        <label for="networkdescription"><h5>Description</h5></label>
+                        <textarea class="form-control mx-auto w-auto" id="networkdescription" name="networkdescription" maxlength="500" placeholder="Enter Item Description" type="text" required></textarea>
+                    </div>
+                    <div class="growernetworkbutton">
+                        <button class="btn" style="background-color: #31c845;" id="next1">Upload Certificate</button>
+                    </div>
                 </div>
-                <div class="growernetworkoption">
-                    <label for="networkname" class="form-check-label"><h5>Network Name</h5></label>
-                    <input autocomplete="off" class="form-control mx-auto w-auto" id="networkname" name="networkname" placeholder="Enter Item Name" type="text" required>
-                </div>
-                <div class="growernetworkoption">
-                    <label for="AccessModelSelect" class="form-check-label"><h5>Access Model</h5></label>
-                    <select class="form-select mx-auto w-auto" name="AccessModelSelect" id="AccessModelSelect" required>
-                        <option disabled selected="true">Choose A Model</option>
-                        <option value="Non-Participating Network">Non-Participating Network</option>
-                        <option value="Public Participating Network">Public Participating Network</option>
-                    </select>
-                </div>
-                <div class="form-group growernetworkoption">
-                    <label for="networkdescription"><h5>Description</h5></label>
-                    <textarea class="form-control mx-auto w-auto" id="networkdescription" name="networkdescription" maxlength="500" placeholder="Enter Item Description" type="text" required></textarea>
-                </div>
-                <div class="growernetworkbutton">
-                    <button class="btn" style="background-color: #31c845;" id="next1">Upload Certificate</button>
-                </div>
-            </div>
-        </form>
-        <div class="groweraccessmodelsall">
-            <div class="grower_access_models_title">
-                <div class="growericon">
-                    <img src="/static/images/circle-info.png" alt="info">
-                </div>
-                <div>
-                    <h4>Access Models</h4>
-                </div>
-            </div>
-            <div class="growermodel">
-                <div class="growermodelset">
+            </form>
+            <div class="groweraccessmodelsall">
+                <div class="grower_access_models_title">
                     <div class="growericon">
-                        <img src="/static/images/lock.png" alt="lock">
+                        <img src="/static/images/circle-info.png" alt="info">
                     </div>
                     <div>
-                        <h5>Non-Participating</h5>
+                        <h4>Access Models</h4>
                     </div>
                 </div>
-                <div style="text-align: left;">
-                    <p>A private Blockchain Network, locked down to a single strain, and it's economy.</p>
-                </div>
-            </div>
-            <div class="growermodel">
-                <div class="growermodelset">
-                    <div class="growericon">
-                        <img src="/static/images/earth.png" alt="globe">
+                <div class="growermodel">
+                    <div class="growermodelset">
+                        <div class="growericon">
+                            <img src="/static/images/lock.png" alt="lock">
+                        </div>
+                        <div>
+                            <h5>Non-Participating</h5>
+                        </div>
                     </div>
-                    <div>
-                        <h5>Participating</h5>
+                    <div style="text-align: left;">
+                        <p>A private Blockchain Network, locked down to a single strain, and it's economy.</p>
                     </div>
                 </div>
-                <div style="text-align: left;">
-                    <p>A public Blockchain Network, that participates in the greater StrainChain Ecosystem.</p>
+                <div class="growermodel">
+                    <div class="growermodelset">
+                        <div class="growericon">
+                            <img src="/static/images/earth.png" alt="globe">
+                        </div>
+                        <div>
+                            <h5>Participating</h5>
+                        </div>
+                    </div>
+                    <div style="text-align: left;">
+                        <p>A public Blockchain Network, that participates in the greater StrainChain Ecosystem.</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div id="step2" class="d-none">
+        <h2>Step 2</h2>
+        <form>
+            <button id="prev1">Previous</button>
+            <button id="next2">Next</button>
+        </form>
+    </div>
+    <div id="step3" class="d-none">
+        <h2>Step 3</h2>
+        <form>
+            <!-- Step 3 form fields go here -->
+            <button id="prev2">Previous</button>
+            <button id="submit">Submit</button>
+        </form>
     </div>
 {% endblock %}
