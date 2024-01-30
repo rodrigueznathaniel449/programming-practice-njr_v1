@@ -59,7 +59,7 @@
                     <div class="form-group growernetworkoption">
                         <label for="networkdescription"><h5>Description</h5></label>
                         <textarea class="form-control mx-auto w-auto" id="networkdescription" name="networkdescription" maxlength="500" placeholder="Enter Item Description" type="text" required></textarea>
-                    </div>
+                    </div>                    
                     <div class="growernetworkbutton">
                         <button class="btn" style="background-color: #31c845;" id="next1">Upload Certificate</button>
                     </div>
@@ -106,16 +106,20 @@
     <div id="step2" class="d-none">
         <h2>Step 2</h2>
         <form>
-            <button id="prev2">Previous</button>
-            <button id="next2">Next</button>
+            <div class="growernetworkbutton">
+                <button class="btn" style="background-color: #001722; color: #e5f4f2;" id="prev2">Previous</button>
+                <button class="btn" style="background-color: #31c845;" id="next2">Add Batch Information</button>
+            </div>
         </form>
     </div>
     <div id="step3" class="d-none">
         <h2>Step 3</h2>
         <form>
             <!-- Step 3 form fields go here -->
-            <button id="prev3">Previous</button>
-            <button id="submit">Submit</button>
+            <div class="growernetworkbutton">
+                <button class="btn" style="background-color: #001722; color: #e5f4f2;" id="prev3">Previous</button>
+                <button class="btn" style="background-color: #31c845;" id="submit">Create Strain Network</button>
+            </div>
         </form>
     </div>
 {% endblock %}
