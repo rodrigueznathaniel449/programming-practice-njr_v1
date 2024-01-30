@@ -318,6 +318,16 @@ main {
 .growernetworkbutton {
     padding: 3%;
 }
+#file-drop-zone {
+    border: 2px dashed #31c845;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+  }
+  
+  #file-list {
+    margin-top: 10px;
+  }
 .form-control {
     width: 30%;
 }
