@@ -320,14 +320,14 @@ main {
 }
 #file-drop-zone {
     border: 2px dashed #31c845;
+    border-radius: 5%;
     text-align: center;
     padding: 20px;
     cursor: pointer;
-  }
-  
-  #file-list {
+}
+#file-list {
     margin-top: 10px;
-  }
+}
 .form-control {
     width: 30%;
 }
