@@ -14,20 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('step2').classList.add('d-none');
             document.getElementById('step1').classList.remove('d-none');
         });
-        
-        document.getElementById('next2').addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('Next2 button clicked')
-            document.getElementById('step2').classList.add('d-none');
-            document.getElementById('step3').classList.remove('d-none');
-        });
-        
-        document.getElementById('prev3').addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('Prev3 button clicked')
-            document.getElementById('step3').classList.add('d-none');
-            document.getElementById('step2').classList.remove('d-none');
-        });
 
         const fileDropZone = document.getElementById('file-drop-zone');
         const fileInput = document.getElementById('file-input');
