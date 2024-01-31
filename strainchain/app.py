@@ -89,6 +89,10 @@ def networksbuild():
     else:
         return render_template("networks-build.html")
 
+@app.rout("/my-networks", methods=["GET", "POST"])
+def mynetworks():
+    return render_template("my-networks.html")
+
 @app.route("/rts-learn",  methods=["GET", "POST"])
 def rts():
     """Show the Real-Time Strategy Page"""
