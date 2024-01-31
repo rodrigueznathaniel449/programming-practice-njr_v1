@@ -84,7 +84,7 @@ def networks():
 def networksbuild():
     """Show the Networks Learn Page"""
     if request.method == "POST":
-        flash("Strain Network Launched", "success")
+        flash("Strain Network Launched")
         return render_template("networks-build.html")
     else:
         return render_template("networks-build.html")
@@ -100,16 +100,16 @@ def myaccount():
     """Show the My Account Page"""
     if request.method == "POST":
         if not request.form.get("currentuser"):
-            flash("Missing Current Username", "error")
+            flash("Missing Current Username")
             return redirect("/")
         elif not request.form.get("currentpw"):
-            flash("Missing Current Password", "error")
+            flash("Missing Current Password")
             return redirect("/")
         elif not request.form.get("updatepw"):
-            flash("Missing New Password", "error")
+            flash("Missing New Password")
             return redirect("/")
         elif not request.form.get("updatepwconfirm"):
-            flash("Missing Confirmation Password", "error")
+            flash("Missing Confirmation Password")
             return redirect("/")
         #If Checks Pass, Connect to DB
         conn = psycopg2.connect(**db_params)
@@ -120,7 +120,7 @@ def myaccount():
         usercheck = curr.fetchall()
         #If User doesnt exist, close DB connection and return to home
         if len(usercheck) != 1:
-            flash("Username Not Found", "error")
+            flash("Username Not Found")
             curr.close()
             conn.close()
             return redirect("/")
@@ -133,7 +133,7 @@ def myaccount():
         bool = check_password_hash(passhash[0][0], password)
         #If not equal
         if bool != True:
-            flash("Password Incorrect", "error")
+            flash("Password Incorrect")
             curr.close()
             conn.close()
             return redirect("/")
@@ -142,12 +142,12 @@ def myaccount():
         update = request.form.get("updatepw")
         updatecheck = request.form.get("updatepwconfirm")
         if update != updatecheck:
-            flash("New Passwords Must Match", "error")
+            flash("New Passwords Must Match")
             curr.close()
             conn.close()
             return redirect("/")
         elif password == update:
-            flash("New Password Cannot Match Old Password", "error")
+            flash("New Password Cannot Match Old Password")
             curr.close()
             conn.close()
             return redirect("/")
@@ -160,7 +160,7 @@ def myaccount():
         curr.close()
         conn.close()
         session.clear()
-        flash("Password Updated", "success")
+        flash("Password Updated")
         return render_template("login.html")
     else:
         return render_template("myaccount.html")
@@ -173,10 +173,10 @@ def login():
     if request.method == "POST":
         #Ensure UN and PW are submitted
         if not request.form.get("username"):
-            flash("Username Required", "error")
+            flash("Username Required")
             return render_template("login.html")
         elif not request.form.get("password"):
-            flash("Password Required", "error")
+            flash("Password Required")
             return render_template("login.html")
         #Query DB for UN if Exists
         conn = psycopg2.connect(**db_params)
@@ -189,13 +189,13 @@ def login():
         passhash = curr.fetchall()
         #If UN does not exist, or input PW when hashed is not equal to stored hash in DB, fail it
         if len(usercheck) != 1 or not check_password_hash(passhash[0][0], password):
-            flash("Incorrect Username or Password", "error")
+            flash("Incorrect Username or Password")
             curr.close()
             conn.close()
             return render_template("login.html")
         #Add Secondary Catch for incorrect login
         if len(usercheck) == 0:
-            flash("Account Does Not Exist", "error")
+            flash("Account Does Not Exist")
             curr.close()
             conn.close()
             return render_template("login.html")
@@ -227,29 +227,29 @@ def register():
         session.clear()
         #Check All Input Fields
         if not request.form.get("firstname"):
-            flash("Please Provide First Name", "error")
+            flash("Please Provide First Name")
             return render_template("register.html")
         elif not request.form.get("lastname"):
-            flash("Please Provide Last Name", "error")
+            flash("Please Provide Last Name")
             return render_template("register.html")
         elif not request.form.get("emailaddress"):
-            flash("Please Provide Email Address", "error")
+            flash("Please Provide Email Address")
             return render_template("register.html")
         elif not request.form.get("username"):
-            flash("Please Provide Username", "error")
+            flash("Please Provide Username")
             return render_template("register.html")
         elif not request.form.get("password"):
-            flash("Please Provide Password", "error")
+            flash("Please Provide Password")
             return render_template("register.html")
         elif not request.form.get("confirmpassword"):
-            flash("Please Provide Confirmation Password", "error")
+            flash("Please Provide Confirmation Password")
             return render_template("register.html")
         elif not request.form.get("AccountTypeSelect"):
-            flash("Please Select Account Type", "error")
+            flash("Please Select Account Type")
             return render_template("register.html")
         #ensure PW and Confirm Match
         if request.form.get("password") != request.form.get("confirmpassword"):
-            flash("Password and Confirmation Must Match", "error")
+            flash("Password and Confirmation Must Match")
             return render_template("register.html")
         #verify username doesnt already exist
         conn = psycopg2.connect(**db_params)
@@ -271,7 +271,7 @@ def register():
             conn.commit()
             curr.close()
             conn.close()
-            flash("Account Created Successfully", "success")
+            flash("Account Created Successfully")
             return render_template("login.html")
         #If Exists, close DB Connection, and return registration page
         elif len(usercheck) != 0:
