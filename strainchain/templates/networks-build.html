@@ -40,7 +40,6 @@
     <div id="step1">
         <div class="growerfeatureset">
             <form action="/networks-build" method="post" style="width: 50vw; padding-left: 1%; padding-right: 1%;" id="growernetworkbuildform" name="growernetworkbuildform">
-                {{ csrf_token() }}
                 <div class="growernetworkbuilder">
                     <div>
                         <h3>Create New Strain Network</h3>
@@ -106,8 +105,7 @@
     </div>
     <div id="step2" class="d-none">
         <div class="growerfeatureset">
-            <form action="/networks-build" method="post" style="width: 50vw; padding-left: 1%; padding-right: 1%;">
-                {{ csrf_token() }}
+            <form action="/networks-build" method="post" style="width: 50vw; padding-left: 1%; padding-right: 1%;" id="growernetworkbuildform2" name="growernetworkbuildform2">
                 <div class="growernetworkbuilder">
                     <div class="mb-3">
                         <h3>Register On-Chain Blockticity Certificate</h3>
@@ -155,8 +153,7 @@
     </div>
     <div id="step3" class="d-none">
         <div class="growerfeatureset">
-            <form action="/networks-build" method="post" style="width: 50vw; padding-left: 1%; padding-right: 1%;">
-                {{ csrf_token() }}
+            <form action="/networks-build" method="post" style="width: 50vw; padding-left: 1%; padding-right: 1%;" id="growernetworkbuildform3" name="growernetworkbuildform3">
                 <div class="growernetworkbuilder">
                     <div class="mb-3">
                         <h3>Register On-Chain Blockticity Certificate</h3>
