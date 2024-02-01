@@ -89,7 +89,7 @@ def networksbuild():
     else:
         return render_template("networks-build.html")
 
-@app.rout("/my-networks", methods=["GET", "POST"])
+@app.route("/my-networks", methods=["GET", "POST"])
 def mynetworks():
     return render_template("my-networks.html")
 
