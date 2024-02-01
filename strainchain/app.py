@@ -85,7 +85,7 @@ def networksbuild():
     """Show the Networks Learn Page"""
     if request.method == "POST":
         flash("Strain Network Launched")
-        return render_template("networks-build.html")
+        return render_template("my-networks.html")
     else:
         return render_template("networks-build.html")
 
