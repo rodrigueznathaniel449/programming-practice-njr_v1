@@ -84,12 +84,31 @@ def networks():
 def networksbuild():
     """Show the Networks Learn Page"""
     if request.method == "POST":
+        #Grab All Inputs from Form,
+        #Dont Check, Dummy Demo
+        uid = session["user_id"]
+        nn = request.form.get("networkname")
+        am = request.form.get("AccessModelSelect")
+        ni = request.form.get("networkdescription")
+        bi = request.form.get("batchdescription")
+        li = request.form.get("labdescription") 
+        #Open DB Connection
+        conn = psycopg2.connect(**db_params)
+        curr = conn.cursor()
+        #Write All information to Networks Table
+        curr.execute("INSERT INTO networks (user_id, network_name, access_model, network_info, batch_info, lab_info, health) VALUES (%s, %s, %s, %s, %s, %s, %s)", (session["user_id"], fn, am, ni, bi, li, "Healthy",))
+        #Close DB Connection
+        curr.close()
+        conn.close()
+        #Throw User to My Networks Page
+        #And tell them network was launched
         flash("Strain Network Launched")
         return render_template("my-networks.html")
     else:
         return render_template("networks-build.html")
 
 @app.route("/my-networks", methods=["GET", "POST"])
+@login_required
 def mynetworks():
     return render_template("my-networks.html")
 
