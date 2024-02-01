@@ -84,6 +84,9 @@ def networks():
 def networksbuild():
     """Show the Networks Learn Page"""
     if request.method == "POST":
+        #Open DB Connection
+        conn = psycopg2.connect(**db_params)
+        curr = conn.cursor()
         #Grab All Inputs from Form,
         #Dont Check, Dummy Demo
         uid = session["user_id"]
@@ -92,9 +95,6 @@ def networksbuild():
         ni = request.form.get("networkdescription")
         bi = request.form.get("batchdescription")
         li = request.form.get("labdescription") 
-        #Open DB Connection
-        conn = psycopg2.connect(**db_params)
-        curr = conn.cursor()
         #Write All information to Networks Table
         curr.execute("INSERT INTO networks (user_id, network_name, access_model, network_info, batch_info, lab_info, health) VALUES (%s, %s, %s, %s, %s, %s, %s)", (session["user_id"], nn, am, ni, bi, li, "Healthy",))
         #Close DB Connection
