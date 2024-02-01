@@ -96,7 +96,7 @@ def networksbuild():
         conn = psycopg2.connect(**db_params)
         curr = conn.cursor()
         #Write All information to Networks Table
-        curr.execute("INSERT INTO networks (user_id, network_name, access_model, network_info, batch_info, lab_info, health) VALUES (%s, %s, %s, %s, %s, %s, %s)", (session["user_id"], fn, am, ni, bi, li, "Healthy",))
+        curr.execute("INSERT INTO networks (user_id, network_name, access_model, network_info, batch_info, lab_info, health) VALUES (%s, %s, %s, %s, %s, %s, %s)", (session["user_id"], nn, am, ni, bi, li, "Healthy",))
         #Close DB Connection
         curr.close()
         conn.close()
