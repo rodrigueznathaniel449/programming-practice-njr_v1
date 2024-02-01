@@ -102,7 +102,7 @@ def networksbuild():
         print("Batch Description:", bi)
         print("Lab Description:", li)
         #Write All information to Networks Table
-        curr.execute("INSERT INTO networks (user_id, network_name, access_model, network_info, batch_info, lab_info, health, created) VALUES (%s, %s, %s, %s, %s, %s, %s, CURRENT_TIMESTAMP)", (session["user_id"], nn, am, ni, bi, li, "Healthy"))
+        curr.execute("INSERT INTO networks (user_id, network_name, access_model, network_info, batch_info, lab_info, health, created) VALUES (%s, %s, %s, %s, %s, %s, %s, CURRENT_TIMESTAMP)", (uid, nn, am, ni, bi, li, "Healthy"))
         #Commit DB Info
         conn.commit()
         #Close DB Connection
