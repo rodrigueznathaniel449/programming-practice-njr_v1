@@ -97,6 +97,8 @@ def networksbuild():
         li = request.form.get("labdescription") 
         #Write All information to Networks Table
         curr.execute("INSERT INTO networks (user_id, network_name, access_model, network_info, batch_info, lab_info, health) VALUES (%s, %s, %s, %s, %s, %s, %s)", (session["user_id"], nn, am, ni, bi, li, "Healthy",))
+        #Commit DB Info
+        conn.commit()
         #Close DB Connection
         curr.close()
         conn.close()
