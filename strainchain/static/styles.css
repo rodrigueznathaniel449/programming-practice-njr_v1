@@ -327,6 +327,8 @@ main {
     border-color: lightgray;
     border-radius: 5%;
     background-color: white;
+    display: flex;
+    flex-direction: row;
 }
 #file-drop-zone {
     border: 2px dashed #31c845;
