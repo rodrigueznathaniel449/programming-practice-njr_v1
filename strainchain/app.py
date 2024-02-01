@@ -94,9 +94,15 @@ def networksbuild():
         am = request.form.get("AccessModelSelect")
         ni = request.form.get("networkdescription")
         bi = request.form.get("batchdescription")
-        li = request.form.get("labdescription") 
+        li = request.form.get("labdescription")
+        #Add Debug Statements
+        print("Network Name:", nn)
+        print("Access Model:", am)
+        print("Network Description:", ni)
+        print("Batch Description:", bi)
+        print("Lab Description:", li)
         #Write All information to Networks Table
-        curr.execute("INSERT INTO networks (user_id, network_name, access_model, network_info, batch_info, lab_info, health) VALUES (%s, %s, %s, %s, %s, %s, %s)", (session["user_id"], nn, am, ni, bi, li, "Healthy",))
+        curr.execute("INSERT INTO networks (user_id, network_name, access_model, network_info, batch_info, lab_info, health, created) VALUES (%s, %s, %s, %s, %s, %s, %s) VALUES (session["user_id"], nn, am, ni, bi, li, "Healthy", CURRENT_TIMESTAMP)")
         #Commit DB Info
         conn.commit()
         #Close DB Connection
