@@ -241,7 +241,7 @@ main {
     background-color: white;
     border: 1px solid;
     border-color: lightgray;
-    border-radius: 5%;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -322,7 +322,7 @@ main {
     padding: 2%;
     border: 1px solid;
     border-color: lightgray;
-    border-radius: 10%;
+    border-radius: 10px;
     background-color: white;
     display: flex;
     flex-direction: row;
@@ -332,7 +332,7 @@ main {
 }
 #file-drop-zone {
     border: 2px dashed #31c845;
-    border-radius: 5%;
+    border-radius: 5px;
     text-align: center;
     padding: 20px;
     cursor: pointer;
