@@ -5,6 +5,29 @@
 {% endblock %}
 
 {% block main %}
+    <div class="growertitleset">
+        <div id="growertitle">
+            <h2>Strain Network Manager</h2>
+        </div>
+        <div id="growernetworksearch">
+            <div class="input-group">
+                <input type="text" class="form-control mx-auto w-auto" placeholder="Network Search" aria-label="network-search" id="networksearch">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit" style="background-color: #31c845;">&#x1F50E;&#xFE0E;</button>
+                </div>
+            </div>
+        </div>
+        <div id="growercheckbox">
+            <label class="switch">
+                <input type="checkbox" id="archivednetworkswitch">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div id="growercheckboxtitle">
+            <h5>Show Archived Networks</h5>
+        </div>
+    </div>
+    <hr class="divider">
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
