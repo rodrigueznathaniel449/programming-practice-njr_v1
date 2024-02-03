@@ -60,8 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         //Event Listender for Submit
-        document.getElementById('submit').addEventListener('click', function(e) {
-            e.preventDefault();
+        document.getElementById('submit').addEventListener('click', function() {
             submitAllForms();
         });
 
