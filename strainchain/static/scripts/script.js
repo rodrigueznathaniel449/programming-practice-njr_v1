@@ -1,13 +1,41 @@
 document.addEventListener('DOMContentLoaded', function() {
     if (window.location.pathname === '/networks-build') {
         console.log('On networks-build page')
+        //functions to validate form inputs
+        function validateStep1() {
+            const networkname = document.getElementById('networkname').value.trim();
+            const accessmodelselect = document.getElementById('accessmodelselect').value.trim();
+            const networkdescription = document.getElementById('networkdescription').value.trim();
+
+            if (networkname === '' || accessmodelselect === '' || networkdescription === '') {
+                alert('Please fill out all required fields');
+                return false;
+            }
+
+            return true;
+        }
+
+        function validateStep2() {
+            const batchdescription = document.getElementById('batchdescription').value.trim();
+            const labdescription = document.getElementById('labdescription').value.trim();
+
+            if (batchdescription === '' || labdescription === '') {
+                alert('Please fill out all required fields');
+                return false;
+            }
+
+            return true;
+        }
+        
         //these functions are for a multi step html form
         //each step is hidden till next or prev is clicked
         document.getElementById('next1').addEventListener('click', function(e) {
             e.preventDefault();
             console.log('Next1 button clicked')
-            document.getElementById('step1').classList.add('d-none');
-            document.getElementById('step2').classList.remove('d-none');
+            if (validateStep1()) {
+                document.getElementById('step1').classList.add('d-none');
+                document.getElementById('step2').classList.remove('d-none');
+            }
         });
         
         document.getElementById('prev2').addEventListener('click', function(e) {
@@ -20,8 +48,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('next2').addEventListener('click', function(e) {
             e.preventDefault();
             console.log('Next2 button clicked')
-            document.getElementById('step2').classList.add('d-none');
-            document.getElementById('step3').classList.remove('d-none');
+            if (validateStep2()) {
+                document.getElementById('step2').classList.add('d-none');
+                document.getElementById('step3').classList.remove('d-none');
+            }
         });
         
         document.getElementById('prev3').addEventListener('click', function(e) {
@@ -31,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('step2').classList.remove('d-none');
         });
 
-        //function to handle file drop zone
+        //steps to handle file drop zone
         const fileDropZone = document.getElementById('file-drop-zone');
         const fileInput = document.getElementById('file-input');
         const fileList = document.getElementById('file-list');

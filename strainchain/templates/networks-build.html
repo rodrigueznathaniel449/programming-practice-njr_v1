@@ -46,11 +46,11 @@
                     </div>
                     <div class="growernetworkoption">
                         <label for="networkname" class="form-check-label"><h5>Network Name</h5></label>
-                        <input autocomplete="off" class="form-control mx-auto w-auto" id="networkname" name="networkname" placeholder="Enter Item Name" type="text">
+                        <input autocomplete="off" class="form-control mx-auto w-auto" id="networkname" name="networkname" placeholder="Enter Item Name" type="text" required>
                     </div>
                     <div class="growernetworkoption">
-                        <label for="AccessModelSelect" class="form-check-label"><h5>Access Model</h5></label>
-                        <select class="form-select mx-auto w-auto" name="AccessModelSelect" id="AccessModelSelect">
+                        <label for="accessmodelselect" class="form-check-label"><h5>Access Model</h5></label>
+                        <select class="form-select mx-auto w-auto" name="accessmodelselect" id="accessmodelselect" required>
                             <option disabled selected="true">Choose A Model</option>
                             <option value="Non-Participating Network">Non-Participating Network</option>
                             <option value="Public Participating Network">Public Participating Network</option>
@@ -58,7 +58,7 @@
                     </div>
                     <div class="form-group growernetworkoption">
                         <label for="networkdescription"><h5>Description</h5></label>
-                        <textarea class="form-control mx-auto w-auto" id="networkdescription" name="networkdescription" maxlength="500" placeholder="Enter Item Description" type="text"></textarea>
+                        <textarea class="form-control mx-auto w-auto" id="networkdescription" name="networkdescription" maxlength="500" placeholder="Enter Item Description" type="text" required></textarea>
                     </div>                    
                     <div class="growernetworkbutton">
                         <button class="btn" style="background-color: #31c845;" id="next1">Upload Certificate</button>
@@ -112,11 +112,11 @@
                     </div>
                     <div class="form-group growernetworkoption">
                         <label for="batchdescription"><h5>Product &amp; Batch Information</h5></label>
-                        <textarea class="form-control mx-auto w-auto" id="batchdescription" name="batchdescription" maxlength="500" placeholder="Extract Cert for Auto-Upload" type="text"></textarea>
+                        <textarea class="form-control mx-auto w-auto" id="batchdescription" name="batchdescription" maxlength="500" placeholder="Extract Cert for Auto-Upload" type="text" required></textarea>
                     </div>
                     <div class="form-group growernetworkoption">
                         <label for="labdescription"><h5>Lab Information</h5></label>
-                        <textarea class="form-control mx-auto w-auto" id="labdescription" name="labdescription" maxlength="500" placeholder="Extract Cert for Auto-Upload" type="text"></textarea>
+                        <textarea class="form-control mx-auto w-auto" id="labdescription" name="labdescription" maxlength="500" placeholder="Extract Cert for Auto-Upload" type="text" required></textarea>
                     </div>
                     <div class="growernetworkbutton mt-3">
                         <button class="btn" style="background-color: #001722; color: #e5f4f2;" id="prev2">Previous</button>
