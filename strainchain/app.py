@@ -84,40 +84,35 @@ def networks():
 def networksbuild():
     """Show the Networks Learn Page"""
     if request.method == "POST":
-        try:
-            #Grab JSON Data uploaded from Submit Function
-            data = request.get_json()
-            #Grab all information from Form
-            uid = session["user_id"]
-            nn = data.get("networkname")
-            am = data.get("accessmodelselect")
-            ni = data.get("networkdescription")
-            bi = data.get("batchdescription")
-            li = data.get("labdescription")
-            #Debug Statements
-            print("Network Name:", nn)
-            print("Access Model:", am)
-            print("Network Description:", ni)
-            print("Batch Description:", bi)
-            print("Lab Description:", li)
-            #Open DB Connection
-            conn = psycopg2.connect(**db_params)
-            curr = conn.cursor()
-            #Write All information to Networks Table
-            curr.execute("INSERT INTO networks (user_id, network_name, access_model, network_info, batch_info, lab_info, health, created) VALUES (%s, %s, %s, %s, %s, %s, %s, CURRENT_TIMESTAMP)", (uid, nn, am, ni, bi, li, "Healthy"))
-            #Commit DB Info
-            conn.commit()
-            #Close DB Connection
-            curr.close()
-            conn.close()
-            #Throw User to My Networks Page
-            #And tell them network was launched
-            flash("Strain Network Launched")
-            return render_template("my-networks.html")
-        except Exception as e:
-            #Handle any exceptions or errors that may occur during processing
-            print("Error:", e)
-            return jsonify({"error": "An error occurred while processing the form"})
+        #Grab JSON Data uploaded from Submit Function
+        data = request.get_json()
+        #Grab all information from Form
+        uid = session["user_id"]
+        nn = data.get("networkname")
+        am = data.get("accessmodelselect")
+        ni = data.get("networkdescription")
+        bi = data.get("batchdescription")
+        li = data.get("labdescription")
+        #Debug Statements
+        print("Network Name:", nn)
+        print("Access Model:", am)
+        print("Network Description:", ni)
+        print("Batch Description:", bi)
+        print("Lab Description:", li)
+        #Open DB Connection
+        conn = psycopg2.connect(**db_params)
+        curr = conn.cursor()
+        #Write All information to Networks Table
+        curr.execute("INSERT INTO networks (user_id, network_name, access_model, network_info, batch_info, lab_info, health, created) VALUES (%s, %s, %s, %s, %s, %s, %s, CURRENT_TIMESTAMP)", (uid, nn, am, ni, bi, li, "Healthy"))
+        #Commit DB Info
+        conn.commit()
+        #Close DB Connection
+        curr.close()
+        conn.close()
+        #Throw User to My Networks Page
+        #And tell them network was launched
+        flash("Strain Network Launched")
+        return render_template("my-networks.html")
     else:
         return render_template("networks-build.html")
 
