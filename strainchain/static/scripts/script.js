@@ -1,13 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
     if (window.location.pathname === '/networks-build') {
         console.log('On networks-build page')
+        //Cache blank values for form inputs
+        let step1Data = {
+            networkname: '',
+            accessmodelselect: '',
+            networkdescription: ''
+        };
+
+        let step2Data = {
+            batchdescription: '',
+            labdescription: ''
+        };
+        
         //functions to validate form inputs
         function validateStep1() {
-            const networkname = document.getElementById('networkname').value.trim();
-            const accessmodelselect = document.getElementById('accessmodelselect').value.trim();
-            const networkdescription = document.getElementById('networkdescription').value.trim();
+            step1Data.networkname = document.getElementById('networkname').value.trim();
+            step1Data.accessmodelselect = document.getElementById('accessmodelselect').value.trim();
+            step1Data.networkdescription = document.getElementById('networkdescription').value.trim();
 
-            if (networkname === '' || accessmodelselect === '' || accessmodelselect === 'Choose A Model' || networkdescription === '') {
+            if (step1Data.networkname === '' || step1Data.accessmodelselect === '' || step1Data.accessmodelselect === 'Choose A Model' || step1Data.networkdescription === '') {
                 alert('Please fill out all required fields');
                 return false;
             }
@@ -16,10 +28,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         function validateStep2() {
-            const batchdescription = document.getElementById('batchdescription').value.trim();
-            const labdescription = document.getElementById('labdescription').value.trim();
+            step2Data.batchdescription = document.getElementById('batchdescription').value.trim();
+            step2Data.labdescription = document.getElementById('labdescription').value.trim();
 
-            if (batchdescription === '' || labdescription === '') {
+            if (step2Data.batchdescription === '' || step2Data.labdescription === '') {
                 alert('Please fill out all required fields');
                 return false;
             }
@@ -29,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         //these functions are for a multi step html form
         //each step is hidden till next or prev is clicked
+        //Designed to work if validation renders true
         document.getElementById('next1').addEventListener('click', function(e) {
             e.preventDefault();
             console.log('Next1 button clicked')
@@ -59,6 +72,37 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Prev3 button clicked')
             document.getElementById('step3').classList.add('d-none');
             document.getElementById('step2').classList.remove('d-none');
+        });
+
+        //Submit Function, Pass Data to Server Side Code
+        document.getElementById('submit').addEventListener('click', function() {
+            //validate Data
+            if (validateStep1() && validateStep2()) {
+                //combine
+                const formData = {
+                    ...step1Data,
+                    ...step2Data
+                };
+
+                //AJAX Request to Server
+                fetch('/networks-build', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Form Submitted Successfully');
+                    } else {
+                        console.error('Form Submission Failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            }
         });
 
         //steps to handle file drop zone
