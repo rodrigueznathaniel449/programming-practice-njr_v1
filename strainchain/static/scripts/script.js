@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const accessmodelselect = document.getElementById('accessmodelselect').value.trim();
             const networkdescription = document.getElementById('networkdescription').value.trim();
 
-            if (networkname === '' || accessmodelselect === '' || networkdescription === '') {
+            if (networkname === '' || accessmodelselect === '' || accessmodelselect === 'Choose A Model' || networkdescription === '') {
                 alert('Please fill out all required fields');
                 return false;
             }
