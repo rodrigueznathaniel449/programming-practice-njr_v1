@@ -1,6 +1,6 @@
 import sqlite3
 import psycopg2
-from flask import Flask, flash, redirect, render_template, request, session, jsonify
+from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -84,15 +84,13 @@ def networks():
 def networksbuild():
     """Show the Networks Learn Page"""
     if request.method == "POST":
-        #Grab JSON Data uploaded from Submit Function
-        data = request.get_json()
         #Grab all information from Form
         uid = session["user_id"]
-        nn = data.get("networkname")
-        am = data.get("accessmodelselect")
-        ni = data.get("networkdescription")
-        bi = data.get("batchdescription")
-        li = data.get("labdescription")
+        nn = request.form.get("networkname")
+        am = request.form.get("accessmodelselect")
+        ni = request.form.get("networkdescription")
+        bi = request.form.get("batchdescription")
+        li = request.form.get("labdescription")
         #Debug Statements
         print("Network Name:", nn)
         print("Access Model:", am)

@@ -74,23 +74,23 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('step2').classList.remove('d-none');
         });
 
-        //Submit Function, Pass Data to Server Side Code
+        // Submit Function, Pass Data to Server Side Code
         document.getElementById('submit').addEventListener('click', function() {
-            //validate Data
+            // Validate Data
             if (validateStep1() && validateStep2()) {
-                //combine
-                const formData = {
-                    ...step1Data,
-                    ...step2Data
-                };
+                // Combine form data
+                const formData = new FormData();
+                for (const key in step1Data) {
+                    formData.append(key, step1Data[key]);
+                }
+                for (const key in step2Data) {
+                    formData.append(key, step2Data[key]);
+                }
 
-                //AJAX Request to Server
+                // AJAX Request to Server
                 fetch('/networks-build', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(formData)
+                    body: formData  // Use formData instead of JSON.stringify
                 })
                 .then(response => {
                     if (response.ok) {
