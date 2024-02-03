@@ -327,8 +327,8 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 7%;
+    margin-right: 7%;
 }
 #file-drop-zone {
     border: 2px dashed #31c845;
