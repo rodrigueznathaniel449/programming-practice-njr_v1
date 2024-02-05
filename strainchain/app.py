@@ -111,7 +111,20 @@ def networksbuild():
 @app.route("/my-networks", methods=["GET", "POST"])
 @login_required
 def mynetworks():
-    return render_template("my-networks.html")
+    #Launch DB Connection
+    conn = psycopg2.connect(**db_params)
+    curr = conn.cursor()
+    #Query for Networks based on User Session
+    user_net = curr.execute("SELECT * FROM networks WHERE user_id = (%s))", (session["user_id"],))
+    print("User Net:", user_net)
+    #Handle Null Case
+    #Route to Page and handle val
+    #Handle Query if Not Null
+    #Close DB
+    curr.close()
+    conn.close()
+    #Return Page, pass val
+    return render_template("my-networks.html", user_net = user_net)
 
 @app.route("/rts-learn",  methods=["GET", "POST"])
 def rts():
