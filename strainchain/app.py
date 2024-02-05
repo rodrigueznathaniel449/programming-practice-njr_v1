@@ -117,10 +117,6 @@ def mynetworks():
     #Query for Networks based on User Session
     curr.execute("SELECT * FROM networks WHERE user_id = (%s)", (session["user_id"],))
     user_net = curr.fetchall()
-    print("User Net:", user_net)
-    #Handle Null Case
-    #Route to Page and handle val
-    #Handle Query if Not Null
     #Close DB
     curr.close()
     conn.close()
