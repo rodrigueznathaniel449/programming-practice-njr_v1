@@ -41,53 +41,54 @@
         <h2>No Networks Launched</h2>
         <h3>Please Visit the StrainFund Network Builder to Launch a Network</h3>
     {% endif %}
-    {% for row in user_bal %}           
-        <div class="growernetworkdeployed">
-            <div class="tech-integration px-4">
-                <h5 class="px-1">
-                    {% row.network_name %}
-                </h5>
-                <h5 class="px-1">
-                    Network
-                </h5>
+    {% else %}
+        {% for row in user_bal %}           
+            <div class="growernetworkdeployed">
+                <div class="tech-integration px-4">
+                    <h5 class="px-1">
+                        {% row.network_name %}
+                    </h5>
+                    <h5 class="px-1">
+                        Network
+                    </h5>
+                </div>
+                <div class="tech-integration px-4">
+                    <h5 class="px-1">
+                        Health:
+                    </h5>
+                    <h5 class="px-1">
+                        {% row.health %}
+                    </h5>
+                </div>
+                <div class="tech-integration px-4">
+                    <h5 class="px-1">
+                        Status:
+                    </h5>
+                    <h5 class="px-1">
+                        {% row.access_model %}
+                    </h5>
+                </div>
+                <div class="tech-integration px-4">
+                    <h5 class="px-1">
+                        Chain ID
+                    </h5>
+                    <h5 class="px-1">
+                        {% row.id %}
+                    </h5>
+                </div>
+                <div class="tech-integration px-4">
+                    <h5 class="px-1">
+                        Connection Path
+                    </h5>
+                </div>
+                <div class="tech-integration px-4">
+                    <h5 class="px-1">
+                        Launched:
+                    </h5>
+                    <h5 class="px-1">
+                        {% row.created %}
+                    </h5>
+                </div>
             </div>
-            <div class="tech-integration px-4">
-                <h5 class="px-1">
-                    Health:
-                </h5>
-                <h5 class="px-1">
-                    {% row.health %}
-                </h5>
-            </div>
-            <div class="tech-integration px-4">
-                <h5 class="px-1">
-                    Status:
-                </h5>
-                <h5 class="px-1">
-                    {% row.access_model %}
-                </h5>
-            </div>
-            <div class="tech-integration px-4">
-                <h5 class="px-1">
-                    Chain ID
-                </h5>
-                <h5 class="px-1">
-                    {% row.id %}
-                </h5>
-            </div>
-            <div class="tech-integration px-4">
-                <h5 class="px-1">
-                    Connection Path
-                </h5>
-            </div>
-            <div class="tech-integration px-4">
-                <h5 class="px-1">
-                    Launched:
-                </h5>
-                <h5 class="px-1">
-                    {% row.created %}
-                </h5>
-            </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
 {% endblock %}
