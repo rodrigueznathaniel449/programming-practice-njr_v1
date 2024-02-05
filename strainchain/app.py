@@ -91,12 +91,6 @@ def networksbuild():
         ni = request.form.get("networkdescription")
         bi = request.form.get("batchdescription")
         li = request.form.get("labdescription")
-        #Debug Statements
-        print("Network Name:", nn)
-        print("Access Model:", am)
-        print("Network Description:", ni)
-        print("Batch Description:", bi)
-        print("Lab Description:", li)
         #Open DB Connection
         conn = psycopg2.connect(**db_params)
         curr = conn.cursor()

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     if (window.location.pathname === '/networks-build') {
-        console.log('On networks-build page')
+        //console.log('On networks-build page')
         //Cache blank values for form inputs
         let step1Data = {
             networkname: '',
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         //Designed to work if validation renders true
         document.getElementById('next1').addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('Next1 button clicked')
+            //console.log('Next1 button clicked')
             if (validateStep1()) {
                 document.getElementById('step1').classList.add('d-none');
                 document.getElementById('step2').classList.remove('d-none');
@@ -53,14 +53,14 @@ document.addEventListener('DOMContentLoaded', function() {
         
         document.getElementById('prev2').addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('Prev2 button clicked')
+            //console.log('Prev2 button clicked')
             document.getElementById('step2').classList.add('d-none');
             document.getElementById('step1').classList.remove('d-none');
         });
         
         document.getElementById('next2').addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('Next2 button clicked')
+            //console.log('Next2 button clicked')
             if (validateStep2()) {
                 document.getElementById('step2').classList.add('d-none');
                 document.getElementById('step3').classList.remove('d-none');
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         document.getElementById('prev3').addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('Prev3 button clicked')
+            //console.log('Prev3 button clicked')
             document.getElementById('step3').classList.add('d-none');
             document.getElementById('step2').classList.remove('d-none');
         });
