@@ -115,7 +115,8 @@ def mynetworks():
     conn = psycopg2.connect(**db_params)
     curr = conn.cursor()
     #Query for Networks based on User Session
-    user_net = curr.execute("SELECT * FROM networks WHERE user_id = (%s)", (session["user_id"],))
+    curr.execute("SELECT * FROM networks WHERE user_id = (%s)", (session["user_id"],))
+    user_net = curr.fetchall()
     print("User Net:", user_net)
     #Handle Null Case
     #Route to Page and handle val
