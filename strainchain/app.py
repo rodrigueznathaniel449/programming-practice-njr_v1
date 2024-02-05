@@ -115,7 +115,7 @@ def mynetworks():
     conn = psycopg2.connect(**db_params)
     curr = conn.cursor()
     #Query for Networks based on User Session
-    curr.execute("SELECT * FROM networks WHERE user_id = (%s)", (session["user_id"],))
+    curr.execute("SELECT * FROM networks WHERE user_id = (%s) ORDER_BY (id) DESC", (session["user_id"],))
     user_net = curr.fetchall()
     #Close DB
     curr.close()
