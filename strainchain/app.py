@@ -84,6 +84,7 @@ def networks():
 def networksbuild():
     """Show the Networks Learn Page"""
     if request.method == "POST":
+        print("recieved POST request")
         #Grab all information from Form
         uid = session["user_id"]
         nn = request.form.get("networkname")
@@ -91,6 +92,7 @@ def networksbuild():
         ni = request.form.get("networkdescription")
         bi = request.form.get("batchdescription")
         li = request.form.get("labdescription")
+        print("Form Data:", uid, nn, am, ni, bi, li)
         #Open DB Connection
         conn = psycopg2.connect(**db_params)
         curr = conn.cursor()
