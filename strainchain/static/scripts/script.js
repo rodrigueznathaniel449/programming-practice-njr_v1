@@ -77,6 +77,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Submit Function, Pass Data to Server Side Code
         document.getElementById('submit').addEventListener('click', function() {
             console.log('submit button clicked')
+            //Check if the form is already being submitted
+            if (isSubmitting) {
+                return;
+            }
+            //set the form as submitting to avoid duplicate call
+            isSubmitting = true;
             // Validate Data
             if (validateStep1() && validateStep2()) {
                 // Combine form data
@@ -102,6 +108,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
                 .catch(error => {
                     console.error('Error:', error);
+                })
+                .finally(() => {
+                    //reset the form submitting state
+                    isSubmitting = false;
                 });
             }
         });
