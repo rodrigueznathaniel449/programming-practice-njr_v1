@@ -74,9 +74,16 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('step2').classList.remove('d-none');
         });
 
+        //Add Flag Variable to Track Form Submission
+        let isFormSubmitted = false;
         // Submit Function, Pass Data to Server Side Code
         document.getElementById('submit').addEventListener('click', function() {
-            document.getElementById('submit').disabled = true;
+            //check if the form has already been submitted
+            if (isFormSubmitted) {
+                return;
+            }
+            //set the flag to indicate form submission
+            isFormSubmitted = true;
             // Validate Data
             if (validateStep1() && validateStep2()) {
                 // Combine form data
