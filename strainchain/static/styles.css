@@ -329,6 +329,7 @@ main {
     justify-content: center;
     margin-left: 7%;
     margin-right: 7%;
+    margin-bottom: 1%;
 }
 #file-drop-zone {
     border: 2px dashed #31c845;
