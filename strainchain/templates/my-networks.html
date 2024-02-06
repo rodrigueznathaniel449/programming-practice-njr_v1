@@ -37,11 +37,11 @@
             {% endfor%}
         {% endif %}
     {% endwith %}
-    {% if user_bal == "" %}
+    {% if user_net == "" %}
         <h2>No Networks Launched</h2>
         <h3>Please Visit the StrainFund Network Builder to Launch a Network</h3>
     {% else %}
-        {% for row in user_bal %}           
+        {% for row in user_net %}           
             <div class="growernetworkdeployed">
                 <div class="tech-integration px-4">
                     <h5 class="px-1">
