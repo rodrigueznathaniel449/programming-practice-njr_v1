@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // AJAX Request to Server
                 fetch('/networks-build', {
                     method: 'POST',
-                    body: formData  // Use formData instead of JSON.stringify
+                    body: formData  // Use formData
                 })
                 .then(response => {
                     if (response.ok) {
