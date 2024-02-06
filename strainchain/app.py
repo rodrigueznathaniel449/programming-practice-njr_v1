@@ -100,6 +100,7 @@ def networksbuild():
         curr.execute("INSERT INTO networks (user_id, network_name, access_model, network_info, batch_info, lab_info, health, created) VALUES (%s, %s, %s, %s, %s, %s, %s, CURRENT_TIMESTAMP)", (uid, nn, am, ni, bi, li, "Healthy"))
         #Commit DB Info
         conn.commit()
+        print("Form Data Comitted:", uid, nn, am, ni, bi, li)
         #Close DB Connection
         curr.close()
         conn.close()
