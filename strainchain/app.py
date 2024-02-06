@@ -119,7 +119,6 @@ def mynetworks():
     #Query for Networks based on User Session
     curr.execute("SELECT * FROM networks WHERE user_id = (%s) ORDER BY id DESC", (session["user_id"],))
     user_net = curr.fetchall()
-    print("User Net:", user_net)
     #Close DB
     curr.close()
     conn.close()
