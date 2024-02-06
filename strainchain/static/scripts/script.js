@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('step2').classList.remove('d-none');
         });
 
+        let isSubmitting = false;
         // Submit Function, Pass Data to Server Side Code
         document.getElementById('submit').addEventListener('click', function() {
             console.log('submit button clicked')
