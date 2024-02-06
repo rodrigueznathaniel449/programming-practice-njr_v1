@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 .then(response => {
                     if (response.ok) {
                         console.log('Form Submitted Successfully');
-                        document.getElementById('submit').removeEventListener('click', handleSubmit);
                     } else {
                         console.error('Form Submission Failed');
                     }
