@@ -76,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Submit Function, Pass Data to Server Side Code
         document.getElementById('submit').addEventListener('click', function() {
+            console.log('submit button clicked')
             // Validate Data
             if (validateStep1() && validateStep2()) {
                 // Combine form data
