@@ -90,9 +90,7 @@ def networksbuild():
         nn = request.form.get("networkname")
         am = request.form.get("accessmodelselect")
         ni = request.form.get("networkdescription")
-        bi = request.form.get("batchdescription")
-        li = request.form.get("labdescription")
-        print("Form Data:", uid, nn, am, ni, bi, li)
+        print("Form Data:", uid, nn, am, ni)
         if nn and am and ni and bi and li:
             # Open DB Connection
             conn = psycopg2.connect(**db_params)
