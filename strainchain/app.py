@@ -108,7 +108,7 @@ def networksbuild():
             return redirect("/my-networks")
         else:
             flash("Strain Network Launched")
-            return render_template("my-networks.html")
+            return redirect("/my-networks")
     else:
         return render_template("networks-build.html")
 
