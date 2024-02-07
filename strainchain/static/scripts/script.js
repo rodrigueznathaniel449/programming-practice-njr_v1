@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
             networkdescription: ''
         };
 
-        let step2Data = {
-            batchdescription: '',
-            labdescription: ''
-        };
+        //let step2Data = {
+            //batchdescription: '',
+            //labdescription: ''
+        //};
         
         //functions to validate form inputs
         function validateStep1() {
@@ -33,23 +33,23 @@ document.addEventListener('DOMContentLoaded', function() {
             return true;
         }
 
-        function validateStep2() {
-            console.log('Before Step 2 validation:');
-            console.log(step2Data);
+        //function validateStep2() {
+            //console.log('Before Step 2 validation:');
+            //console.log(step2Data);
 
-            step2Data.batchdescription = document.getElementById('batchdescription').value.trim();
-            step2Data.labdescription = document.getElementById('labdescription').value.trim();
+            //step2Data.batchdescription = document.getElementById('batchdescription').value.trim();
+            //step2Data.labdescription = document.getElementById('labdescription').value.trim();
 
-            if (step2Data.batchdescription === '' || step2Data.labdescription === '') {
-                alert('Please fill out all required fields');
-                return false;
-            }
+            //if (step2Data.batchdescription === '' || step2Data.labdescription === '') {
+                //alert('Please fill out all required fields');
+                //return false;
+            //}
 
-            console.log('After Step 2 validation:');
-            console.log(step2Data);
+            //console.log('After Step 2 validation:');
+            //console.log(step2Data);
 
-            return true;
-        }
+            //return true;
+        //}
         
         //these functions are for a multi step html form
         //each step is hidden till next or prev is clicked
@@ -90,15 +90,16 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('submit').addEventListener('click', function() {
             console.log('submit button clicked')
             // Validate Data
-            if (validateStep1() && validateStep2()) {
+            // && validateStep2()
+            if (validateStep1()) {
                 // Combine form data
                 const formData = new FormData();
                 for (const key in step1Data) {
                     formData.append(key, step1Data[key]);
                 }
-                for (const key in step2Data) {
-                    formData.append(key, step2Data[key]);
-                }
+                //for (const key in step2Data) {
+                    //formData.append(key, step2Data[key]);
+                //}
 
                 // Log form data being sent
                 for (const [key, value] of formData.entries()) {
