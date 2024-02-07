@@ -93,21 +93,24 @@ def networksbuild():
         bi = request.form.get("batchdescription")
         li = request.form.get("labdescription")
         print("Form Data:", uid, nn, am, ni, bi, li)
-        #Open DB Connection
-        conn = psycopg2.connect(**db_params)
-        curr = conn.cursor()
-        #Write All information to Networks Table
-        curr.execute("INSERT INTO networks (user_id, network_name, access_model, network_info, batch_info, lab_info, health, created) VALUES (%s, %s, %s, %s, %s, %s, %s, CURRENT_TIMESTAMP)", (uid, nn, am, ni, bi, li, "Healthy"))
-        #Commit DB Info
-        conn.commit()
-        print("Form Data Comitted:", uid, nn, am, ni, bi, li)
-        #Close DB Connection
-        curr.close()
-        conn.close()
-        #Throw User to My Networks Page
-        #And tell them network was launched
-        flash("Strain Network Launched")
-        return redirect("/my-networks")
+        if nn and am and ni and bi and li:
+            # Open DB Connection
+            conn = psycopg2.connect(**db_params)
+            curr = conn.cursor()
+            # Write All information to Networks Table
+            curr.execute("INSERT INTO networks (user_id, network_name, access_model, network_info, batch_info, lab_info, health, created) VALUES (%s, %s, %s, %s, %s, %s, %s, CURRENT_TIMESTAMP)", (uid, nn, am, ni, bi, li, "Healthy"))
+            # Commit DB Info
+            conn.commit()
+            print("Form Data Committed:", uid, nn, am, ni, bi, li)
+            # Close DB Connection
+            curr.close()
+            conn.close()
+            # Throw User to My Networks Page
+            # And tell them network was launched
+            flash("Strain Network Launched")
+            return redirect("/my-networks")
+        else:
+            return redirect("/my-networks")
     else:
         return render_template("networks-build.html")
 
