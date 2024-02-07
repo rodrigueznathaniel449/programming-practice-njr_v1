@@ -73,10 +73,15 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('next2').addEventListener('click', function(e) {
             e.preventDefault();
             //console.log('Next2 button clicked')
-            if (validateStep2()) {
-                document.getElementById('step2').classList.add('d-none');
-                document.getElementById('step3').classList.remove('d-none');
-            }
+            //if (validateStep2()) {
+            //}
+            document.getElementById('step2').classList.add('d-none');
+            document.getElementById('step3').classList.remove('d-none');
+        });
+
+        document.getElementById('certextract').addEventListener('click', function() {
+            document.getElementById('step2').classList.add('d-none');
+            document.getElementById('step3').classList.remove('d-none');
         });
         
         document.getElementById('prev3').addEventListener('click', function(e) {
