@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         //functions to validate form inputs
         function validateStep1() {
+            console.log('Before Step 1 validation:');
+            console.log(step1Data);
+
             step1Data.networkname = document.getElementById('networkname').value.trim();
             step1Data.accessmodelselect = document.getElementById('accessmodelselect').value.trim();
             step1Data.networkdescription = document.getElementById('networkdescription').value.trim();
@@ -24,10 +27,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 return false;
             }
 
+            console.log('After Step 1 validation:');
+            console.log(step1Data);
+
             return true;
         }
 
         function validateStep2() {
+            console.log('Before Step 2 validation:');
+            console.log(step2Data);
+
             step2Data.batchdescription = document.getElementById('batchdescription').value.trim();
             step2Data.labdescription = document.getElementById('labdescription').value.trim();
 
@@ -35,6 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('Please fill out all required fields');
                 return false;
             }
+
+            console.log('After Step 2 validation:');
+            console.log(step2Data);
 
             return true;
         }
@@ -88,6 +100,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     formData.append(key, step2Data[key]);
                 }
 
+                // Log form data being sent
+                for (const [key, value] of formData.entries()) {
+                    console.log(`Form Data: ${key} = ${value}`);
+                }
+                
                 // AJAX Request to Server
                 fetch('/networks-build', {
                     method: 'POST',
