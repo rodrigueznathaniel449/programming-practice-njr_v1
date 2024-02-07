@@ -107,7 +107,6 @@ def networksbuild():
             conn.close()
             # Throw User to My Networks Page
             # And tell them network was launched
-            flash("Strain Network Launched")
             return redirect("/my-networks")
         else:
             flash("Strain Network Launched")
