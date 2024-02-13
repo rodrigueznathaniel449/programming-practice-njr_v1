@@ -331,6 +331,21 @@ main {
     margin-right: 7%;
     margin-bottom: 1%;
 }
+.dropdown-toggle.growernetworkdeployed {
+    position: relative;
+}
+
+.collapse.growernetworkdeployed {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    width: auto;
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-top: none;
+    padding-bottom: 1%;
+}
 #file-drop-zone {
     border: 2px dashed #31c845;
     border-radius: 5px;
