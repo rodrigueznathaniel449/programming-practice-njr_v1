@@ -339,12 +339,11 @@ main {
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 1000;
     width: auto;
     background-color: white;
     border: 1px solid #ced4da;
     border-top: none;
-    padding-bottom: 1%;
+    margin-bottom: 5%;
 }
 #file-drop-zone {
     border: 2px dashed #31c845;
