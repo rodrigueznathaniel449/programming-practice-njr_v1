@@ -175,9 +175,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const dropdownButtons = document.querySelectorAll('dropdown-toggle.growernetworksdeployed');
         const collapsedData = document.querySelectorAll('collapse.growernetworkdeployed');
 
-        dropdownButtons.forEach((button, index) => {
+        dropdownButtons.forEach((button) => {
             button.addEventListener('click', function () {
-                collapsedData[index].classList.toggle('show');
+                const buttonId = button.getAttribute('id');
+                const index = buttonId.replace('dropdownmenubutton', '');
+                const correspondingCollapsedData = document.getElementById('additionalData' + index);
+                if (correspondingCollapsedData) {
+                    correspondingCollapsedData.classList.toggle('show');
+                }
             });
         });
     }
