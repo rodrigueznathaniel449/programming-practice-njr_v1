@@ -42,7 +42,48 @@
         <h3>Please Visit the StrainFund Network Builder to Launch a Network</h3>
         <h3>New StrainFund Networks take a second to launch, refresh to see your most up to date creation</h3>
     {% else %}
-        {% for row in user_net %}           
+        {% for row in user_net %}  
+            <div class="dropdown">
+                <button class="dropdown-toggle growernetworkdeployed" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="tech-integration px-4">
+                        <h5 class="px-1">
+                            {{ row[2] }}
+                        </h5>
+                        <h5 class="px-1">
+                            Network
+                        </h5>
+                    </div>
+                    <div class="tech-integration px-4">
+                        <h5 class="px-1">
+                            Health:
+                        </h5>
+                        <h5 class="px-1">
+                            {{ row[7] }}
+                        </h5>
+                    </div>
+                    <div class="tech-integration px-4">
+                        <h5 class="px-1">
+                            Status:
+                        </h5>
+                        <h5 class="px-1">
+                            {{ row[3] }}
+                        </h5>
+                    </div>
+                    <div class="tech-integration px-4">
+                        <h5 class="px-1">
+                            Chain ID
+                        </h5>
+                        <h5 class="px-1">
+                            {{ row[0] }}
+                        </h5>
+                    </div>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>         
             <div class="growernetworkdeployed">
                 <div class="tech-integration px-4">
                     <h5 class="px-1">
@@ -93,14 +134,4 @@
         {% endfor %}
     {% endif %}
     <hr class="divider">
-    <div class="dropdown">
-        <button class="dropdown-toggle growernetworkdeployed" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Test Network
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-    </div>
 {% endblock %}
