@@ -44,7 +44,7 @@
     {% else %}
         {% for row in user_net %}  
             <div class="dropdown">
-                <button class="dropdown-toggle growernetworkdeployed" type="button" id="dropdownmenubutton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="dropdown-toggle growernetworkdeployed" type="button" id="dropdownmenubutton{{ loop.index }}" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="tech-integration px-4">
                         <h5 class="px-1">
                             {{ row[2] }}
@@ -78,7 +78,7 @@
                         </h5>
                     </div>
                 </button>
-                <div class="collapse growernetworkdeployed" id="additionalData">
+                <div class="collapse growernetworkdeployed" id="additionalData{{ loop.index }}">
                     <div class="tech-integration px-4">
                         <h5 class="px-1">
                             Launched:
