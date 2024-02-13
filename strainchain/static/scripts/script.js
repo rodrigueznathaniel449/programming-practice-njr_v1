@@ -172,8 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     if (window.location.pathname === '/my-networks') {
         
-        const dropdownButtons = document.querySelectorAll('dropdown-toggle.growernetworksdeployed');
-        const collapsedData = document.querySelectorAll('collapse.growernetworkdeployed');
+        const dropdownButtons = document.querySelectorAll('.dropdown-toggle.growernetworkdeployed');
 
         dropdownButtons.forEach((button) => {
             button.addEventListener('click', function () {
