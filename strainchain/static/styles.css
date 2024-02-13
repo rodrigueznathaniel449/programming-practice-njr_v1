@@ -343,7 +343,7 @@ main {
     background-color: white;
     border: 1px solid #ced4da;
     border-top: none;
-    margin-bottom: 5%;
+    margin-bottom: 10px;
 }
 #file-drop-zone {
     border: 2px dashed #31c845;
