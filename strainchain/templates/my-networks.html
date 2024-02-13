@@ -44,7 +44,7 @@
     {% else %}
         {% for row in user_net %}  
             <div class="dropdown">
-                <button class="dropdown-toggle growernetworkdeployed" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="dropdown-toggle growernetworkdeployed" type="button" id="dropdownmenubutton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <div class="tech-integration px-4">
                         <h5 class="px-1">
                             {{ row[2] }}
@@ -77,22 +77,22 @@
                             {{ row[0] }}
                         </h5>
                     </div>
-                    <div clss="collapse" id="additionalData">
-                        <div class="tech-integration px-4">
-                            <h5 class="px-1">
-                                Launched:
-                            </h5>
-                            <h5 class="px-1">
-                                {{ row[8] }}
-                            </h5>
-                        </div>
-                        <div class="tech-integration px-4">
-                            <h5 class="px-1">
-                                Connection Path
-                            </h5>
-                        </div>
-                    </div>
                 </button>
+                <div class="collapse" id="additionalData">
+                    <div class="tech-integration px-4">
+                        <h5 class="px-1">
+                            Launched:
+                        </h5>
+                        <h5 class="px-1">
+                            {{ row[8] }}
+                        </h5>
+                    </div>
+                    <div class="tech-integration px-4">
+                        <h5 class="px-1">
+                            Connection Path
+                        </h5>
+                    </div>
+                </div>
             </div>         
             <div class="growernetworkdeployed">
                 <div class="tech-integration px-4">
