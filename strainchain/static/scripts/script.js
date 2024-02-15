@@ -181,28 +181,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const correspondingCollapsedData = document.getElementById('additionalData' + index);
                 if (correspondingCollapsedData) {
                     correspondingCollapsedData.classList.toggle('show');
-
-                    // Calculate total height of expanded dropdowns
-                    let totalHeight = 0;
-                    dropdownButtons.forEach((btn) => {
-                        const dataIndex = btn.getAttribute('id').replace('dropdownmenubutton', '');
-                        const collapsedData = document.getElementById('additionalData' + dataIndex);
-                        if (collapsedData && collapsedData.classList.contains('show')) {
-                            totalHeight += collapsedData.offsetHeight;
-                        }
-                    });
-
-                    // Adjust the top position of subsequent dropdowns
-                    const container = button.closest('.growernetworkcontainer');
-                    const currentIndex = Array.from(container.querySelectorAll('.dropdown-toggle.growernetworkdeployed')).indexOf(button);
-                    const subsequentDropdowns = Array.from(container.querySelectorAll('.dropdown-toggle.growernetworkdeployed')).slice(currentIndex + 1);
-                    subsequentDropdowns.forEach((nextButton) => {
-                        const nextIndex = nextButton.getAttribute('id').replace('dropdownmenubutton', '');
-                        const nextCollapsedData = document.getElementById('additionalData' + nextIndex);
-                        if (nextCollapsedData) {
-                            nextCollapsedData.style.top = totalHeight + 'px';
-                        }
-                    });
                 }
             });
         });
