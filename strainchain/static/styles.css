@@ -318,6 +318,9 @@ main {
 .growernetworkbutton {
     padding: 2%;
 }
+.growernetworkcontainer {
+    height: auto;
+}
 .growernetworkdeployed {
     padding: 2%;
     border: 1px solid;
