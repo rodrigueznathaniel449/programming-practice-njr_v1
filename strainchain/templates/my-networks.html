@@ -42,58 +42,60 @@
         <h3>Please Visit the StrainFund Network Builder to Launch a Network</h3>
         <h3>New StrainFund Networks take a second to launch, refresh to see your most up to date creation</h3>
     {% else %}
-        {% for row in user_net %}  
-            <div class="dropdown">
-                <button class="dropdown-toggle growernetworkdeployed" type="button" id="dropdownmenubutton{{ row[0] }}" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <div class="tech-integration px-4">
-                        <h5 class="px-1">
-                            {{ row[2] }}
-                        </h5>
-                        <h5 class="px-1">
-                            Network
-                        </h5>
+        <div class="growernetworkcontainer">
+            {% for row in user_net %}  
+                <div class="dropdown">
+                    <button class="dropdown-toggle growernetworkdeployed" type="button" id="dropdownmenubutton{{ row[0] }}" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="tech-integration px-4">
+                            <h5 class="px-1">
+                                {{ row[2] }}
+                            </h5>
+                            <h5 class="px-1">
+                                Network
+                            </h5>
+                        </div>
+                        <div class="tech-integration px-4">
+                            <h5 class="px-1">
+                                Health:
+                            </h5>
+                            <h5 class="px-1">
+                                {{ row[7] }}
+                            </h5>
+                        </div>
+                        <div class="tech-integration px-4">
+                            <h5 class="px-1">
+                                Status:
+                            </h5>
+                            <h5 class="px-1">
+                                {{ row[3] }}
+                            </h5>
+                        </div>
+                        <div class="tech-integration px-4">
+                            <h5 class="px-1">
+                                Chain ID
+                            </h5>
+                            <h5 class="px-1">
+                                {{ row[0] }}
+                            </h5>
+                        </div>
+                    </button>
+                    <div class="collapse growernetworkdeployed" id="additionalData{{ row[0] }}">
+                        <div class="tech-integration px-4">
+                            <h5 class="px-1">
+                                Launched:
+                            </h5>
+                            <h5 class="px-1">
+                                {{ row[8] }}
+                            </h5>
+                        </div>
+                        <div class="tech-integration px-4">
+                            <h5 class="px-1">
+                                Connection Path
+                            </h5>
+                        </div>
                     </div>
-                    <div class="tech-integration px-4">
-                        <h5 class="px-1">
-                            Health:
-                        </h5>
-                        <h5 class="px-1">
-                            {{ row[7] }}
-                        </h5>
-                    </div>
-                    <div class="tech-integration px-4">
-                        <h5 class="px-1">
-                            Status:
-                        </h5>
-                        <h5 class="px-1">
-                            {{ row[3] }}
-                        </h5>
-                    </div>
-                    <div class="tech-integration px-4">
-                        <h5 class="px-1">
-                            Chain ID
-                        </h5>
-                        <h5 class="px-1">
-                            {{ row[0] }}
-                        </h5>
-                    </div>
-                </button>
-                <div class="collapse growernetworkdeployed" id="additionalData{{ row[0] }}">
-                    <div class="tech-integration px-4">
-                        <h5 class="px-1">
-                            Launched:
-                        </h5>
-                        <h5 class="px-1">
-                            {{ row[8] }}
-                        </h5>
-                    </div>
-                    <div class="tech-integration px-4">
-                        <h5 class="px-1">
-                            Connection Path
-                        </h5>
-                    </div>
-                </div>
-            </div>         
-        {% endfor %}
+                </div>         
+            {% endfor %}
+        </div>
     {% endif %}
 {% endblock %}
