@@ -349,6 +349,16 @@ main {
     border-top: none;
     margin-bottom: 10px;
 }
+.growernetworkwrapper {
+    display: flex;
+}
+.growernetworkinner.growernetworkdeployed {
+    max-height: 0;
+    overflow: hidden;
+}
+.growernetworkwrapper.is-open .growernetworkinner.growernetworkdeployed {
+    max-height: 100%;
+}
 #file-drop-zone {
     border: 2px dashed #31c845;
     border-radius: 5px;
