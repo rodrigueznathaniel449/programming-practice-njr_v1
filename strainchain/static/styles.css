@@ -339,16 +339,6 @@ main {
 .dropdown-toggle.growernetworkdeployed {
     position: relative;
 }
-.collapse.growernetworkdeployed {
-    position: absolute;
-    top: 100%;
-    left: 25%;
-    width: auto;
-    background-color: white;
-    border: 1px solid #ced4da;
-    border-top: none;
-    margin-bottom: 10px;
-}
 .growernetworkwrapper {
     display: flex;
 }
