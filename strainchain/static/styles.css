@@ -73,6 +73,10 @@ main {
     padding-left: 0%;
     padding-right: 0%;
 }
+.columnflex {
+    display: flex;
+    flex-direction: column;
+}
 .center-pad-text {
     padding-left: 25%;
     padding-right: 25%;
