@@ -169,20 +169,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    if (window.location.pathname === '/my-networks') {
+//document.addEventListener('DOMContentLoaded', function() {
+    //if (window.location.pathname === '/my-networks') {
         
-        const dropdownButtons = document.querySelectorAll('.dropdown-toggle.growernetworkdeployed');
+        //const dropdownButtons = document.querySelectorAll('.dropdown-toggle.growernetworkdeployed');
 
-        dropdownButtons.forEach((button) => {
-            button.addEventListener('click', function () {
-                const buttonId = button.getAttribute('id');
-                const index = buttonId.replace('dropdownmenubutton', '');
-                const correspondingCollapsedData = document.getElementById('additionalData' + index);
-                if (correspondingCollapsedData) {
-                    correspondingCollapsedData.classList.toggle('show');
-                }
-            });
-        });
-    }
-});
+        //dropdownButtons.forEach((button) => {
+            //button.addEventListener('click', function () {
+                //const buttonId = button.getAttribute('id');
+                //const index = buttonId.replace('dropdownmenubutton', '');
+                //const correspondingCollapsedData = document.getElementById('additionalData' + index);
+                //if (correspondingCollapsedData) {
+                    //correspondingCollapsedData.classList.toggle('show');
+                //}
+            //});
+        //});
+    //}
+//});
