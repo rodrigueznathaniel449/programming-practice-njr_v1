@@ -354,7 +354,6 @@ main {
 }
 .growernetworkinner.growernetworkdeployed {
     max-height: 0;
-    overflow: hidden;
 }
 .growernetworkwrapper.is-open .growernetworkinner.growernetworkdeployed {
     max-height: 100%;
